@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="ui_MainFrame" cloudDestinationProperty="ui_MainFrame" >
+  <component type="Container" name="mainContainer" cloudDestinationProperty="mainContainer" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
+    <component type="Container" name="TopContainer" cloudDestinationProperty="TopContainer" scrollVisible="false" snapToGrid="false" flatten="false" scrollableX="false" scrollableY="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
+    </component>
+    <component type="Container" name="BottomContainer" cloudDestinationProperty="BottomContainer" >
+    </component>
+    <component type="Container" name="midContainer" cloudDestinationProperty="midContainer" >
+    </component>
+  </component>
+</component>

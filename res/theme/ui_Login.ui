@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="ui_Login" cloudDestinationProperty="ui_Login" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Container" name="Top" cloudDestinationProperty="Top" scrollVisible="false" snapToGrid="true" flatten="true" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="3" >
+    <component type="Container" name="Container4" cloudDestinationProperty="Container4" >
+    </component>
+    <component type="ImageViewer" name="ImageViewer" cloudDestinationProperty="ImageViewer" snapToGrid="true" >
+      <custom name="image" type="com.codename1.ui.Image" value="default.png" />
+    </component>
+    <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+      <component type="Button" name="GoToForgot" cloudDestinationProperty="Button3" text="FORGOT?" verticalAlignment="4" >
+      </component>
+    </component>
+  </component>
+  <component type="Container" name="Mid" cloudDestinationProperty="Mid" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="Y" >
+      <component type="TextField" name="TextField1" cloudBoundProperty="text" cloudDestinationProperty="TextField1" tactileTouch="true" snapToGrid="true" text="" growByContent="true" maxSize="60" >
+      </component>
+      <component type="TextField" name="TextField" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="" maxSize="60" >
+      </component>
+      <component type="Button" name="Button1" cloudDestinationProperty="Button1" text="LOGIN" >
+      </component>
+    </component>
+    <component type="Container" name="Container2" cloudDestinationProperty="Container2" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
+    </component>
+  </component>
+</component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="ui_Forgot" cloudDestinationProperty="ui_Forgot" layout="GridLayout" gridLayoutRows="3" gridLayoutColumns="1" >
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="GridLayout" gridLayoutRows="5" gridLayoutColumns="1" >
+    <component type="Container" name="Container2" cloudDestinationProperty="Container2" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="4" >
+      <component type="Container" name="Container5" cloudDestinationProperty="Container5" >
+      </component>
+      <component type="Container" name="Container4" cloudDestinationProperty="Container4" >
+      </component>
+      <component type="Container" name="Container3" cloudDestinationProperty="Container3" >
+      </component>
+      <component type="Button" name="BacktoLogin" cloudDestinationProperty="Button2" text="LOGIN" >
+      </component>
+    </component>
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="TextField" name="emailTf" cloudBoundProperty="text" cloudDestinationProperty="emailTf" uiid="TextField" text="" >
+    </component>
+    <component type="Button" name="Button" cloudDestinationProperty="Button" text="SEND EMAIL" >
+    </component>
+  </component>
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="ui_Login" cloudDestinationProperty="ui_Login" >
+  <component type="Container" name="mainContainer" cloudDestinationProperty="mainContainer" >
+    <component type="Container" name="BottomContainer" cloudDestinationProperty="BottomContainer" >
+    </component>
+    <component type="Container" name="TopContainer" cloudDestinationProperty="TopContainer" layout="BoxLayout" boxLayoutAxis="X" >
+      <component type="ImageViewer" name="Profile_image" cloudDestinationProperty="Profile_image" uiid="ImageViewer" >
+        <custom name="image" type="com.codename1.ui.Image" " />
+      </component>
+    </component>
+    <component type="Container" name="midContainer" cloudDestinationProperty="midContainer" >
+    </component>
+  </component>
+</component>
