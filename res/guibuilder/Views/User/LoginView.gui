@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="112.16931" layeredLayoutPreferredHeightMM="183.33333"  autolayout="true" title="Authentification" scrollableX="false" scrollableY="false" name="LoginView">
+  <component type="CheckBox" text="Garder Ma Session Active" styles="font:2.0mm;" preferredSize="inherit inherit" icon="fontImage:e5ca" name="remember_me">
+    <layoutConstraint insets="0.0mm auto auto auto" referenceComponents="3 3 -1 3 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="TextField" styles="alignment:center;" preferredSize="100.0mm 7.5%" hint="Pseudo" hintIcon="fontImage:e7fd" name="username">
+    <layoutConstraint insets="2.910053mm 0px auto 0px" referenceComponents="5 4 -1 4 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="TextField" styles="alignment:center;" preferredSize="100.0mm 7.5%" hint="mot de passe" hintIcon="fontImage:e897" name="password">
+    <layoutConstraint insets="1.0% 0.0mm auto 0.0mm" referenceComponents="1 1 -1 1 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Se Connecter" styles="font:3.0mm;" preferredSize="58.99471mm 5.820106mm" name="login">
+    <layoutConstraint insets="2.910053mm 7.4074073% auto 5.026455mm" referenceComponents="2 4 -1 4 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" preferredSize="105.02646mm 2.910053mm" name="Label">
+    <layoutConstraint insets="2.1164021mm 9.0% 97.32894% 9.0%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" styles="bgType:image_scaled_fit; bgImage:logo.png;" preferredSize="60.05291mm 9.523809mm" name="logo">
+    <layoutConstraint insets="1px 13.793103% auto 13.793103%" referenceComponents="4 4 -1 4 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Mot de passe Oublier ?" styles="font:2.0mm; alignment:center;" preferredSize="29.100529mm 4.2328043mm" pressedIcon="fontImage:e85a" name="Frogot">
+    <layoutConstraint insets="0.0mm auto auto auto" referenceComponents="0 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+</component>
