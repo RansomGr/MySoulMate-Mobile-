@@ -37,9 +37,9 @@ public class MainFrameView extends com.codename1.ui.Form {
         Toolbar tb=this.getToolbar();
         
          Image  icon = MyApplication.getTheme().getImage("heart.png"); 
-        //icon=  icon.scaled(48, 48);
+         icon=  icon.scaled(48, 48);
          Button b= new Button(icon);
-          Container topBar = BorderLayout.west(new Label("MySoulMate"));
+         Container topBar = BorderLayout.west(new Label("MySoulMate"));
          b.addActionListener((ActionEvent evt )-> {
            System.out.println("clicked");
         });
