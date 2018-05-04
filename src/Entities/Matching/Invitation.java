@@ -12,11 +12,19 @@ import Entities.User.User;
  * @author Nadia
  */
 public class Invitation {
-    
-     private User client1;
+    private int ID;
+    private User client1;
     private User client2;
     private String statut;
 
+       public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+    
     public Invitation(User client1, User client2, String statut ) {
         this.client1 = client1;
         this.client2 = client2;

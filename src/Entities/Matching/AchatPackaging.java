@@ -19,6 +19,14 @@ public class AchatPackaging {
     private Packaging p;
     private Date date_debut;
 
+    public AchatPackaging(int ID, User c, Packaging p, Date date_debut) {
+        this.ID=ID;
+        this.c = c;
+        this.p = p;
+        this.date_debut = date_debut;
+    }
+        
+        
     public AchatPackaging(User c, Packaging p, Date date_debut) {
         this.c = c;
         this.p = p;
