@@ -69,6 +69,7 @@
     <image name="Profile_img.borderTop_1.png" type="multi"  />
     <image name="Profile_img.borderTopL_1.png" type="multi"  />
     <image name="Profile_img.borderTopR_1.png" type="multi"  />
+    <image name="settings.png"  />
     <image name="sliderEmpty.png" type="multi"  />
     <image name="sliderEmptyLeft.png" type="multi"  />
     <image name="sliderEmptyRight.png" type="multi"  />
@@ -621,4 +622,176 @@
         <val key="SideCommand.sel#padUnit" value="2,0,2,0" />
         <val key="SideCommand.sel#padding" value="1.0,1.0,0.0,0.0" />
         <val key="SideCommand.sel#textDecoration" value="0" />
-        <val key
+        <val key="SideCommand.sel#transparency" value="0" />
+        <val key="SideCommand.textDecoration" value="0" />
+        <val key="SideCommand.transparency" value="0" />
+        <val key="SideNavigationPanel.bgColor" value="cc0000" />
+        <val key="SideNavigationPanel.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="SideNavigationPanel.padding" value="0.0,0.0,0.0,0.0" />
+        <val key="SideNavigationPanel.transparency" value="255" />
+        <gradient key="Slider.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Slider.bgType" value="0" />
+        <border key="Slider.border" type="imageH" i1="sliderEmptyLeft.png" i2="sliderEmptyRight.png" i3="sliderEmpty.png" />
+        <val key="Slider.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Slider.padUnit" value="2,2,2,2" />
+        <val key="Slider.padding" value="0.0,0.0,4.0,4.0" />
+        <gradient key="Slider.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Slider.press#bgType" value="0" />
+        <border key="Slider.press#border" type="imageH" i1="sliderEmptyLeft.png" i2="sliderEmptyRight.png" i3="sliderEmpty.png" />
+        <val key="Slider.press#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Slider.press#padUnit" value="2,2,2,2" />
+        <val key="Slider.press#padding" value="0.0,0.0,4.0,4.0" />
+        <gradient key="Slider.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Slider.sel#bgType" value="0" />
+        <border key="Slider.sel#border" type="imageH" i1="sliderEmptyLeft.png" i2="sliderEmptyRight.png" i3="sliderEmpty.png" />
+        <val key="Slider.sel#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Slider.sel#padUnit" value="2,2,2,2" />
+        <val key="Slider.sel#padding" value="0.0,0.0,4.0,4.0" />
+        <val key="Slider.transparency" value="0" />
+        <gradient key="SliderFull.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="SliderFull.bgType" value="0" />
+        <border key="SliderFull.border" type="imageH" i1="sliderRedLeft.png" i2="sliderRedRight.png" i3="sliderRedCenter.png" />
+        <val key="SliderFull.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="SliderFull.padUnit" value="2,2,2,2" />
+        <val key="SliderFull.padding" value="0.0,0.0,4.0,4.0" />
+        <gradient key="SliderFull.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="SliderFull.press#bgType" value="0" />
+        <border key="SliderFull.press#border" type="imageH" i1="sliderRedLeft.png" i2="sliderRedRight.png" i3="sliderRedCenter.png" />
+        <val key="SliderFull.press#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="SliderFull.press#padUnit" value="2,2,2,2" />
+        <val key="SliderFull.press#padding" value="0.0,0.0,4.0,4.0" />
+        <val key="SliderFull.press#transparency" value="0" />
+        <gradient key="SliderFull.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="SliderFull.sel#bgType" value="0" />
+        <border key="SliderFull.sel#border" type="imageH" i1="sliderRedLeft.png" i2="sliderRedRight.png" i3="sliderRedCenter.png" />
+        <val key="SliderFull.sel#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="SliderFull.sel#padUnit" value="2,2,2,2" />
+        <val key="SliderFull.sel#padding" value="0.0,0.0,4.0,4.0" />
+        <val key="SliderFull.sel#transparency" value="0" />
+        <val key="SliderFull.transparency" value="0" />
+        <val key="Tab.bgColor" value="ff3333" />
+        <border key="Tab.border" type="line" millimeters="false" thickness="1.0" color="16777215" />
+        <val key="Tab.fgColor" value="ffffff" />
+        <font key="Tab.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="Tab.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Tab.press#bgColor" value="ffffff" />
+        <border key="Tab.press#border" type="line" millimeters="false" thickness="1.0" color="16777215" />
+        <val key="Tab.press#fgColor" value="0" />
+        <font key="Tab.press#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="Tab.press#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Tab.press#transparency" value="255" />
+        <val key="Tab.sel#bgColor" value="ffffff" />
+        <border key="Tab.sel#border" type="line" millimeters="false" thickness="1.0" color="16777215" />
+        <val key="Tab.sel#fgColor" value="0" />
+        <font key="Tab.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="Tab.sel#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Tab.sel#transparency" value="255" />
+        <val key="Tab.transparency" value="255" />
+        <val key="Tabs.bgColor" value="ff3333" />
+        <val key="Tabs.fgColor" value="0" />
+        <val key="Tabs.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="Tabs.padding" value="0.0,0.0,0.0,0.0" />
+        <val key="Tabs.transparency" value="255" />
+        <gradient key="TextArea.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TextArea.bgType" value="0" />
+        <border key="TextArea.border" type="empty" />
+        <val key="TextArea.fgColor" value="ffffff" />
+        <font key="TextArea.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <gradient key="TextArea.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TextArea.sel#bgType" value="0" />
+        <border key="TextArea.sel#border" type="empty" />
+        <val key="TextArea.sel#fgColor" value="ffffff" />
+        <font key="TextArea.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TextArea.sel#transparency" value="0" />
+        <val key="TextArea.transparency" value="0" />
+        <gradient key="TextField.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TextField.bgType" value="0" />
+        <border key="TextField.border" type="line" millimeters="false" thickness="1.0" color="10066329" />
+        <val key="TextField.fgColor" value="0" />
+        <font key="TextField.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TextField.marUnit" value="2,2,2,2" />
+        <val key="TextField.margin" value="1.0,1.0,1.0,1.0" />
+        <gradient key="TextField.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TextField.press#bgType" value="0" />
+        <border key="TextField.press#border" type="line" millimeters="false" thickness="1.0" color="16724787" />
+        <val key="TextField.press#fgColor" value="0" />
+        <font key="TextField.press#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TextField.press#marUnit" value="2,2,2,2" />
+        <val key="TextField.press#margin" value="1.0,1.0,1.0,1.0" />
+        <val key="TextField.press#transparency" value="0" />
+        <gradient key="TextField.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TextField.sel#bgType" value="0" />
+        <border key="TextField.sel#border" type="line" millimeters="false" thickness="1.0" color="16724787" />
+        <val key="TextField.sel#fgColor" value="0" />
+        <font key="TextField.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TextField.sel#marUnit" value="2,2,2,2" />
+        <val key="TextField.sel#margin" value="1.0,1.0,1.0,1.0" />
+        <val key="TextField.sel#transparency" value="0" />
+        <val key="TextField.transparency" value="0" />
+        <val key="TextHint.fgColor" value="999999" />
+        <font key="TextHint.font" type="ttf" face="0" style="0" size="0" name="native:ItalicThin" family="native:ItalicThin" sizeSettings="3" actualSize="3.0" />
+        <val key="Title.align" value="4" />
+        <val key="Title.fgColor" value="ffffff" />
+        <font key="Title.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="3" actualSize="3.5" />
+        <val key="Title.transparency" value="0" />
+        <val key="TitleArea.bgColor" value="ff3333" />
+        <gradient key="TitleArea.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TitleArea.bgType" value="0" />
+        <border key="TitleArea.border" type="image" i1="TitleArea.borderTop_1.png" i2="TitleArea.borderBottom_1.png" i3="TitleArea.borderLeft_1.png" i4="TitleArea.borderRight_1.png" i5="TitleArea.borderTopL_1.png" i6="TitleArea.borderTopR_1.png" i7="TitleArea.borderBottomL_1.png" i8="TitleArea.borderBottomR_1.png" i9="TitleArea.borderCenter_1.png" />
+        <val key="TitleArea.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleArea.padUnit" value="2,0,2,0" />
+        <val key="TitleArea.padding" value="1.0,1.0,0.0,0.0" />
+        <val key="TitleArea.transparency" value="255" />
+        <gradient key="TitleCommand.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TitleCommand.bgType" value="0" />
+        <border key="TitleCommand.border" type="empty" />
+        <val key="TitleCommand.fgColor" value="ffffff" />
+        <font key="TitleCommand.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TitleCommand.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleCommand.padUnit" value="2,2,2,2" />
+        <val key="TitleCommand.padding" value="1.0,1.0,1.0,1.0" />
+        <gradient key="TitleCommand.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TitleCommand.press#bgType" value="0" />
+        <border key="TitleCommand.press#border" type="empty" />
+        <val key="TitleCommand.press#fgColor" value="ffffff" />
+        <font key="TitleCommand.press#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TitleCommand.press#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleCommand.press#padUnit" value="2,2,2,2" />
+        <val key="TitleCommand.press#padding" value="1.0,1.0,1.0,1.0" />
+        <val key="TitleCommand.press#transparency" value="0" />
+        <gradient key="TitleCommand.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TitleCommand.sel#bgType" value="0" />
+        <border key="TitleCommand.sel#border" type="empty" />
+        <val key="TitleCommand.sel#fgColor" value="ffffff" />
+        <font key="TitleCommand.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <val key="TitleCommand.sel#margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleCommand.sel#padUnit" value="2,2,2,2" />
+        <val key="TitleCommand.sel#padding" value="1.0,1.0,1.0,1.0" />
+        <val key="TitleCommand.sel#transparency" value="0" />
+        <val key="TitleCommand.transparency" value="0" />
+        <val key="ToastBarMessage.fgColor" value="ffffff" />
+        <font key="ToastBarMessage.font" type="ttf" face="0" style="0" size="0" name="native:MainThin" family="native:MainThin" sizeSettings="3" actualSize="3.0" />
+        <val key="ToastBarMessage.padUnit" value="2,2,2,2" />
+        <val key="ToastBarMessage.padding" value="2.0,2.0,1.0,1.0" />
+        <val key="bgColor" value="ffffff" />
+        <border key="border" type="empty" />
+        <val key="fgColor" value="0" />
+        <font key="font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <border key="press#border" type="empty" />
+        <border key="sel#border" type="empty" />
+        <val key="transparency" value="0" />
+    </theme>
+    <image name="TitleArea.borderBottom_1.png" type="multi"  />
+    <image name="TitleArea.borderBottomL_1.png" type="multi"  />
+    <image name="TitleArea.borderBottomR_1.png" type="multi"  />
+    <image name="TitleArea.borderCenter_1.png" type="multi"  />
+    <image name="TitleArea.borderLeft_1.png" type="multi"  />
+    <image name="TitleArea.borderRight_1.png" type="multi"  />
+    <image name="TitleArea.borderTop_1.png" type="multi"  />
+    <image name="TitleArea.borderTopL_1.png" type="multi"  />
+    <image name="TitleArea.borderTopR_1.png" type="multi"  />
+    <ui name="ui_Forgot" />
+    <ui name="ui_Login" />
+    <ui name="ui_MainFrame" />
+    <image name="windows-icon.png" type="multi"  />
+</resource>

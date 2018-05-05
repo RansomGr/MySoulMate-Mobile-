@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Views.User.UserAccountView;
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
@@ -33,12 +34,14 @@ public class MainFrameView extends com.codename1.ui.Form {
     }
        private void init_MainFrameView()
     {
-    
         Toolbar tb=this.getToolbar();
         
-         Image  icon = MyApplication.getTheme().getImage("heart.png"); 
+         Image  icon = MyApplication.getTheme().getImage("settings.png"); 
          icon=  icon.scaled(48, 48);
          Button b= new Button(icon);
+         b.addActionListener((evt) -> {
+          MyApplication.setCurrentView(new UserAccountView(MyApplication.getTheme()));
+         });
          Container topBar = BorderLayout.west(new Label("MySoulMate"));
          b.addActionListener((ActionEvent evt )-> {
            System.out.println("clicked");

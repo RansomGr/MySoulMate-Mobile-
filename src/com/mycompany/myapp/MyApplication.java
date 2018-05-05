@@ -23,8 +23,10 @@ public class MyApplication {
     public static Resources  getTheme(){return MyApplication.theme;}// Theme
     public static User getConnectedUser(){return MyApplication.ConnectedUser; }// Session owner
     public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;}
-    public static void setCurrentView(Form view){MyApplication.current=view;MyApplication.current.show();}// switch the view remotly 
+    public static void setCurrentView(Form view){MyApplication.previous=current;MyApplication.current=view;MyApplication.current.show();}// switch the view remotly 
+    public static Form getPreviousView(){return MyApplication.previous;}
     private static Form current;
+    private static Form previous;
 
     public void init(Object context)  {  
     theme = UIManager.initFirstTheme("/theme");
