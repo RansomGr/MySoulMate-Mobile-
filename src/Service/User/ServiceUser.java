@@ -6,13 +6,15 @@
 package Service.User;
 
 import Entities.User.User;
+import InternalAPI.CustomEspritJSONParser;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.List;
-
+import com.mycompany.myapp.MyApplication;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 /**
  *
@@ -22,6 +24,37 @@ public class ServiceUser implements Service.Service {
 
     @Override
     public void create(Object o) {
+        /*private int id;
+    private String nom;
+    private String prenom;
+    private String gender;
+    private String username;
+    private String username_canonical;
+    private String email;
+    private String email_canonical;
+    private int enabled;
+    private String salt;
+    private String password;
+    private String last_login;
+    private String confirmation_token;
+    private String role;*/
+        User a=(User)o;
+          con.setUrl(url+
+                  "User/addnew?nom="+a.getNom()+
+                  "&prenom="+a.getPrenom()+
+                  "&gender="+a.getGender()+
+                  "&username="+a.getUsername()+
+                  "&email="+a.getEmail()+
+                  "&password="+a.getPassword()
+                  
+          );
+          con.addResponseListener((NetworkEvent evt) -> {
+              String str = new String(con.getResponseData());
+              System.out.println(str);
+          });
+          NetworkManager.getInstance().addToQueueAndWait(con);
+           
+
      
     }
 
@@ -44,23 +77,31 @@ public class ServiceUser implements Service.Service {
     public Object fetchOneById() {
     return null;
     }
-    public User fetchOneByCredentials(String login,String password)
+    public void fetchOneByCredentials(String login,String password)
     {
-        User Utitlisateur=new User();
+        User Utilisateur= new User();
         con.setUrl(url+"User?login="+login+"&password="+password);
         con.addResponseListener((NetworkEvent evt) -> {
              String str = new String(con.getResponseData());
-              System.out.println(str);
              JSONParser jsonp = new JSONParser();
             try {
                 Map<String, Object> Users = jsonp.parseJSON(new CharArrayReader(new String(con.getResponseData()).toCharArray()));
-                System.out.println(Users);
-                Utitlisateur.setId((int)Float.parseFloat(Users.get("id").toString()));                     
+                if((int)Float.parseFloat(Users.get("id").toString())!=-1){// getting the user if found -1 not found 
+                   Utilisateur.setId((int)Float.parseFloat(Users.get("id").toString()));
+                Utilisateur.setNom(Users.get("nom").toString());
+                Utilisateur.setPrenom(Users.get("prenom").toString());
+                Utilisateur.setGender(Users.get("gender").toString());
+                CustomEspritJSONParser cejp = new CustomEspritJSONParser(Users.get("datenaissance").toString());      
+                String x=cejp.getNestedItems().get("timestamp").toString();  
+                Utilisateur.setDatenaissance(new Date((long)Float.parseFloat(x)*1000));   
+                MyApplication.setConnectedUser(Utilisateur);
+                }
+                else
+                MyApplication.setConnectedUser(null);        
                 } catch (IOException ex) {
             }
         });
-        NetworkManager.getInstance().addToQueueAndWait(con);
-        return Utitlisateur;
+        NetworkManager.getInstance().addToQueueAndWait(con);   
     }
  
     

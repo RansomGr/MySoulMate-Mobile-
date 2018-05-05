@@ -48,6 +48,7 @@
     <image name="Dialog.borderTopR_1.png" type="multi"  />
     <image name="duke-no-logos.png" type="multi"  />
     <image name="heart.png"  />
+    <image name="logo.png"  />
     <image name="Menu.borderBottom_1.png" type="multi"  />
     <image name="Menu.borderBottomL_1.png" type="multi"  />
     <image name="Menu.borderBottomR_1.png" type="multi"  />
@@ -68,6 +69,7 @@
     <image name="Profile_img.borderTop_1.png" type="multi"  />
     <image name="Profile_img.borderTopL_1.png" type="multi"  />
     <image name="Profile_img.borderTopR_1.png" type="multi"  />
+    <image name="settings.png"  />
     <image name="sliderEmpty.png" type="multi"  />
     <image name="sliderEmptyLeft.png" type="multi"  />
     <image name="sliderEmptyRight.png" type="multi"  />

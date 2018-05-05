@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="117.72487" layeredLayoutPreferredHeightMM="190.21164"  autolayout="true" title="ForgotView" scrollableY="true" name="Recuperation Compte">
+  <component type="Label" preferredSize="97.61905mm 2.1164021mm" name="Label">
+    <layoutConstraint insets="3.4391532mm 5.0% auto 5.0%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" styles="bgImage:logo.png;" preferredSize="43.650795mm 9.523809mm" name="Label_1">
+    <layoutConstraint insets="-3.4391534mm 13.793103% auto 13.793103%" referenceComponents="0 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="TextField" preferredSize="99.4709mm inherit" hint="Adress Email" hintIcon="fontImage:e0be" name="Email">
+    <layoutConstraint insets="0.26455027mm 2.3809538mm auto 2.1164017mm" referenceComponents="1 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Envoyer email recuperation" styles="font:2.5mm;" preferredSize="50.79365mm inherit" icon="fontImage:e163" name="SendEmail">
+    <layoutConstraint insets="1.8518524mm 10.0% auto 10.0%" referenceComponents="2 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Se Connecter" preferredSize="25.132275mm inherit" icon="fontImage:e853" name="BackToLogin">
+    <layoutConstraint insets="2.1164021mm 20.0% auto 20.0%" referenceComponents="3 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+</component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="Info Utilisateur" scrollableY="false" name="UserAccountView">
+  <component type="Label" preferredSize="73.280426mm 1.3227513mm" name="Label">
+    <layoutConstraint insets="4.2328043mm auto auto auto" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="TextField" styles="border:1.0mm underline eb5966;" disabledStyles="opacity:50;" preferredSize="inherit 6.878306865692139mm" hint="Nom" name="nom">
+    <layoutConstraint insets="-2.1164021mm 10.0% auto 10.0%" referenceComponents="0 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="TextField" styles="border:1.0mm underline eb5966;" disabledStyles="opacity:50;" preferredSize="inherit 6.878306865692139mm" hint="Prenom" name="prenom">
+    <layoutConstraint insets="-1.3227513mm 10.0% auto 10.0%" referenceComponents="1 -1 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" text="Date Naissance" preferredSize="74.07407mm inherit" name="Label_2">
+    <layoutConstraint insets="0.26455027mm 10.0% auto 10.0%" referenceComponents="6 -1 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Picker" text="..." styles="border:1.0mm underline eb5966;" disabledStyles="fgColor:0; opacity:50;" preferredSize="inherit 7.0mm" pickerType="4" name="datenaissancee">
+    <layoutConstraint insets="-2.1164021mm 10.0% auto 10.0%" referenceComponents="3 -1 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="SpanButton" text="Mettre A jour" styles="alignment:left;" preferredSize="32.80423355102539mm inherit" icon="fontImage:e923" name="update">
+    <layoutConstraint insets="auto 0.0mm 0.0mm 0.0mm" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Container" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="2"  preferredSize="74.07407mm 18.25397mm" name="Grid_Layout">
+    <layoutConstraint insets="0.2645502mm 10.0% auto 10.0%" referenceComponents="2 -1 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+    <component type="Label" text="Gender" name="Label_1">
+    </component>
+    <component type="Container" layout="BoxLayout" boxLayoutAxis="Y"  preferredSize="39.15344mm 19.57672mm" name="Box_Layout_Y">
+      <component type="RadioButton" text="Homme" preferredSize="26.190475mm inherit" group="gender" selected="false" name="man">
+      </component>
+      <component type="RadioButton" text="Femme" preferredSize="27.513227mm inherit" group="gender" name="woman">
+      </component>
+    </component>
+  </component>
+</component>
