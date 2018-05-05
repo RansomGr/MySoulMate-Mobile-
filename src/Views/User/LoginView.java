@@ -9,10 +9,12 @@ import Entities.User.User;
 import Service.User.ServiceUser;
 import Views.MainFrameView;
 import com.codename1.components.InfiniteProgress;
+import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
+import com.codename1.ui.events.ActionEvent;
 import com.mycompany.myapp.MyApplication;
 
 /**
@@ -38,9 +40,8 @@ public class LoginView extends com.codename1.ui.Form {
              Su.fetchOneByCredentials(gui_username.getText(), gui_password.getText());
              if(MyApplication.getConnectedUser()!=null)
                  {
-
-                      ip.dispose();
-                     Toolbar.setGlobalToolbar(true);
+                     ip.dispose();
+                     MyApplication.enableTollBar(true);
                      MyApplication.setCurrentView(new MainFrameView(MyApplication.getTheme()));
                  }
              else
@@ -52,7 +53,7 @@ public class LoginView extends com.codename1.ui.Form {
                  }
                  }
          });
-        
+    
      }
     @Override
     public void layoutContainer() {

@@ -8,6 +8,7 @@ import static com.codename1.ui.CN.*;
 import com.codename1.io.Log;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Form;
+import com.codename1.ui.Toolbar;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
@@ -22,10 +23,12 @@ public class MyApplication {
     private static User ConnectedUser;
     public static Resources  getTheme(){return MyApplication.theme;}// Theme
     public static User getConnectedUser(){return MyApplication.ConnectedUser; }// Session owner
-    public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;}
-    public static void setCurrentView(Form view){MyApplication.current=view;MyApplication.current.show();}// switch the view remotly 
+    public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;} // puttin the session owner 
+    public static void setCurrentView(Form view){MyApplication.previous=current;MyApplication.current=view;MyApplication.current.show();}// switch the view remotly 
+    public static void showPreviousView(){previous.showBack();current=previous;}
+    public static void enableTollBar(boolean state){Toolbar.setGlobalToolbar(state); }
     private static Form current;
-
+    private static Form previous;
     public void init(Object context)  {  
     theme = UIManager.initFirstTheme("/theme");
     UIBuilder.registerCustomComponent("ImageViewer",ImageViewer.class);

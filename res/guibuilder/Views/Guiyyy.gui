@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="Guiyyy" name="Guiyyy">
+  <component type="Label" text="Type event" name="Lbl_type">
+    <layoutConstraint insets="6.0836496% auto auto 0.0mm" referenceComponents="-1 -1 -1 3 " referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="SpanButton" text="Valider" name="valider">
+    <layoutConstraint insets="auto auto 6.4638767% 0.0mm" referenceComponents="-1 -1 -1 4 " referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="ComboBox" name="Combo_Box">
+    <stringItem value="Mariage" /><stringItem value="fiancailles" /><stringItem value="Rendez-vous" /><stringItem value="" />    <layoutConstraint insets="-10.58201mm 38.268158% -1.5872955mm auto" referenceComponents="-1 -1 0 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" text="Date" name="lblDate">
+    <layoutConstraint insets="9.471366% auto 85.83379% 23.324022%" referenceComponents="4 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Container" name="Date_Spinner">
+    <layoutConstraint insets="13.8783245% 25.139664% auto auto" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Container" name="heurDebut">
+    <layoutConstraint insets="4.2328067mm auto 71.76719% -1.5873016mm" referenceComponents="4 -1 -1 2 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Container" name="heurFin">
+    <layoutConstraint insets="60.898876% 55.963303% 0.0mm 1.5873032mm" referenceComponents="-1 -1 1 2 " referencePositions="0.0 0.0 1.0 0.0" />
+  </component>
+  <component type="Label" text="Heure début" name="lblHeurDeb">
+    <layoutConstraint insets="45.627377% auto auto 20.94972%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" text="Date fin" name="lbldateFin">
+    <layoutConstraint insets="auto auto 28.326996% -1.8518524mm" referenceComponents="-1 -1 -1 0 " referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+</component>

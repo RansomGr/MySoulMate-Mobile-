@@ -5,6 +5,8 @@
  */
 package Entities.User;
 
+import java.util.Date;
+
 /**
  *
  * @author Ransom
@@ -19,6 +21,7 @@ public class User {
     private String email;
     private String email_canonical;
     private int enabled;
+    private Date datenaissance;
     private String salt;
     private String password;
     private String last_login;
@@ -178,6 +181,15 @@ public class User {
         this.matchtot = matchtot;
     }
 
+    public Date getDatenaissance() {
+        return datenaissance;
+    }
+
+    public void setDatenaissance(Date datenaissance) {
+        this.datenaissance = datenaissance;
+    }
+    
+
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", gender=" + gender + ", username=" + username + ", username_canonical=" + username_canonical + ", email=" + email + ", email_canonical=" + email_canonical + ", enabled=" + enabled + ", salt=" + salt + ", password=" + password + ", last_login=" + last_login + ", confirmation_token=" + confirmation_token + ", role=" + role + '}';
@@ -199,6 +211,8 @@ public class User {
         this.role = role;
         this.adresse = adresse;
     }
+
+
     
     
     
