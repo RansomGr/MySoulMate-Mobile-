@@ -5,6 +5,8 @@
  */
 package Views.User;
 
+import Singletons.BackCommand;
+import Views.TerminalView;
 import com.codename1.ui.CheckBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Component;
@@ -24,13 +26,14 @@ import com.codename1.ui.spinner.Picker;
 import com.mycompany.myapp.MyApplication;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.application.Platform;
 
 /**
  * GUI builder created Form
  *
  * @author Ransom
  */
-public class UserAccountView extends com.codename1.ui.Form {
+public class UserAccountView extends com.codename1.ui.Form implements TerminalView {
     private List<Component>guis;
     private int mode; // {0 : enable , 1 : revert, 2 : update }
     private int Gender;
@@ -40,23 +43,17 @@ public class UserAccountView extends com.codename1.ui.Form {
         init_actions();
     }
     public UserAccountView(com.codename1.ui.util.Resources resourceObjectInstance) {
-        initGuiBuilderComponents(resourceObjectInstance);
-          Command back = new Command("Back") {
-        public void actionPerformed(ActionEvent ev) {
-         MyApplication.getPreviousView().showBack();
-     }
-     };
-this.setBackCommand(back);     
+        initGuiBuilderComponents(resourceObjectInstance);  
         init_form();
-        init_actions();
-        
+        init_actions();   
     }
     private void fire_btn(){
               switch (mode) {
                 case 1:
                     for(Component t: guis){
                         t.setEnabled(false);
-                    }      if(Gender>0) {gui_man.setVisible(false);gui_woman.setVisible(true);} else {gui_man.setVisible(true);gui_woman.setVisible(false);}
+                    }      
+                    if(Gender>0) {gui_man.setVisible(false);gui_woman.setVisible(true);} else {gui_man.setVisible(true);gui_woman.setVisible(false);}
                     update_button_state(0);
                     break;
                 case 2: // updating the  user
@@ -66,12 +63,10 @@ this.setBackCommand(back);
                      }
                      else
                      {
-                         
-                   
                      revert(); 
                      }
                     break;
-                default:
+                case 0:
                     for(Component t: guis){
                         t.setEnabled(true);
                     }   gui_woman.setVisible(true);
@@ -142,7 +137,8 @@ this.setBackCommand(back);
     }
     private void init_actions() {   
         gui_update.addActionListener((evt) -> {
-        fire_btn();
+            evt.consume();// somewhy thread is called twice when i don't consume !
+             fire_btn();
         });
         
         for(Component t: guis){
@@ -157,14 +153,13 @@ this.setBackCommand(back);
                 if(!((Picker)t).getDate().equals(MyApplication.getConnectedUser().getDatenaissance()))
                     update_button_state(2);
             });
-            
-             
-            
          }
          
         
     }
-    private void init_form(){
+    @Override
+    public void init_form(){
+        TerminalView.super.init_form();
         mode=0;// form locked waiting to unlock on click
         guis= new ArrayList<>();
         guis.add(gui_nom);
@@ -174,8 +169,9 @@ this.setBackCommand(back);
         guis.add(gui_woman);   
         gui_datenaissancee.setType(Display.PICKER_TYPE_DATE);
         revert();
-    
+        
     }
+
 //-- DON'T EDIT BELOW THIS LINE!!!
     private com.codename1.ui.Label gui_Label = new com.codename1.ui.Label();
     private com.codename1.ui.TextField gui_nom = new com.codename1.ui.TextField();
@@ -278,4 +274,6 @@ this.setBackCommand(back);
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!
+
+
 }
