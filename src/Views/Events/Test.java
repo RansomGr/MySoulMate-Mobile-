@@ -3,39 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Plan;
+package Views.Events;
 
 import Views.TerminalView;
-import com.codename1.ui.Button;
-import com.codename1.ui.layouts.BoxLayout;
-import com.codename1.ui.layouts.Layout;
 
 /**
  * GUI builder created Form
  *
- * @author irou
+ * @author dellpro
  */
-public class ListPlanView extends com.codename1.ui.Form implements TerminalView {
-    
-   
-    public ListPlanView() {
+public class Test extends com.codename1.ui.Form implements TerminalView{
+
+    public Test() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         init_form();
-       
-    }
-    
-    public ListPlanView(com.codename1.ui.util.Resources resourceObjectInstance) {
-        initGuiBuilderComponents(resourceObjectInstance);
-        init_form();
-       
     }
     @Override
     public void init_form()
     {
         TerminalView.super.init_form();
-         this.setLayout(BoxLayout.y());
-        this.addComponent(new PlanSingleComp());
-       
+    }
+    
+    public Test(com.codename1.ui.util.Resources resourceObjectInstance) {
+        initGuiBuilderComponents(resourceObjectInstance);
+        init_form();
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
@@ -46,12 +37,11 @@ public class ListPlanView extends com.codename1.ui.Form implements TerminalView 
     private void initGuiBuilderComponents(com.codename1.ui.util.Resources resourceObjectInstance) {
         setLayout(new com.codename1.ui.layouts.LayeredLayout());
         setInlineStylesTheme(resourceObjectInstance);
-        setScrollableY(true);
                 setInlineStylesTheme(resourceObjectInstance);
-        setTitle("ListPlanView");
-        setName("ListPlanView");
+        setTitle("Evennement");
+        setName("Test");
         addComponent(gui_Label);
-        gui_Label.setText("Irou");
+        gui_Label.setText("Test teStt");
                 gui_Label.setInlineStylesTheme(resourceObjectInstance);
         gui_Label.setName("Label");
         ((com.codename1.ui.layouts.LayeredLayout)gui_Label.getParent().getLayout()).setInsets(gui_Label, "auto auto auto auto").setReferenceComponents(gui_Label, "-1 -1 -1 -1").setReferencePositions(gui_Label, "0.0 0.0 0.0 0.0");

@@ -21,6 +21,7 @@ public interface TerminalView {
         { 
         System.out.println("it's a Form instance");
         Form f= ((Form)this);
+            System.out.println(BackCommand.getInstance());
         f.setBackCommand(BackCommand.getInstance());
         }
     }

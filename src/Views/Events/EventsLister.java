@@ -7,6 +7,7 @@ package Views.Events;
 
 import Entities.Events.Events;
 import Service.Events.ServiceEvents;
+import Views.TerminalView;
 import com.codename1.components.ImageViewer;
 import com.codename1.ui.Container;
 import com.codename1.ui.EncodedImage;
@@ -18,31 +19,42 @@ import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
+import com.mycompany.myapp.MyApplication;
 import java.util.List;
 
 /**
  *
  * @author dellpro
  */
-public class EventsLister {
- private Form listForm;
+public class EventsLister extends com.codename1.ui.Form implements TerminalView {
+ 
    
     public EventsLister() {
+        init_form();
+       
+          this.setLayout(BoxLayout.y());
+          
+             listEvent=new ServiceEvents().getListEvt();
+     
+             System.out.println("hire");
+             System.out.println(listEvent);
+             
+        for (Events evt : listEvent){
+             System.out.println("hire2");
+            addEvt(evt,MyApplication.getTheme());
     }
-
-    public Form getListForm() {
-        return listForm;
     }
-
-    public void setListForm(Form listForm) {
-        this.listForm = listForm;
+    @Override
+    public void init_form()
+    {
+        TerminalView.super.init_form();
     }
-    
     
     private List<Events>listEvent;
     public EventsLister(Resources res) {
+        init_form();
         
-          listForm = new Form(BoxLayout.y());
+          this.setLayout(BoxLayout.y());
           
              listEvent=new ServiceEvents().getListEvt();
      
@@ -62,15 +74,11 @@ public void addEvt(Events e,Resources res ){
        
         Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
       
-//           ImageViewer imageEvt=new ImageViewer();
-//           
-//            EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(listForm.getWidth(), 250), true);
-//            imageEvt.setImage(URLImage.createToStorage(placeholder, "user_"+e.getPhoto(), "http://localhost:8181/espritentraideINTEG1/EspritEntreAideINTEG1/web/uploads/images/"+e.getPhoto()));
-//      
+     
         Container C2 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         Label nom =new Label("nom : "+e.getNomEvt());
-        Label descript = new Label("email : "+e.getDescriptionEvt());
-        Label dateevt = new Label("categorie(s) : "+e.getDateEvt());
+        Label descript = new Label("descri : "+e.getDescriptionEvt());
+        Label dateevt = new Label("dattteee : "+e.getDateEvt());
         Label go = new Label("--->");
         Label go1 = new Label("*********************************************");
         Label description ;
@@ -84,11 +92,10 @@ public void addEvt(Events e,Resources res ){
          
         
         go.addPointerPressedListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent evt) {
         
-                new EvtAfficher(res, e).getListerForm().show();
+                new EvtAfficher(res, e).show();
             }
         });
         
@@ -99,12 +106,9 @@ public void addEvt(Events e,Resources res ){
               C2.add(go);
               C2.add(go1);
        
-        //C1.add(imageUser);
-       // C1.add(C2);
+        
         System.out.println("hire3");
-        listForm.add(C2);
-          
-          
+        this.add(C2);      
       }
     
 }
