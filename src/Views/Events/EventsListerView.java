@@ -12,20 +12,21 @@ import Views.TerminalView;
  *
  * @author dellpro
  */
-public class EventsAjouterGui extends com.codename1.ui.Form implements TerminalView{
+public class EventsListerView extends com.codename1.ui.Form implements TerminalView{
 
-    public EventsAjouterGui() {
+    public EventsListerView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
+        init_form();
+    }
+    
+    public EventsListerView(com.codename1.ui.util.Resources resourceObjectInstance) {
+        initGuiBuilderComponents(resourceObjectInstance);
+        init_form();
     }
     @Override
     public void init_form()
     {
         TerminalView.super.init_form();
-    }
-    
-    public EventsAjouterGui(com.codename1.ui.util.Resources resourceObjectInstance) {
-        initGuiBuilderComponents(resourceObjectInstance);
-        init_form();
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!

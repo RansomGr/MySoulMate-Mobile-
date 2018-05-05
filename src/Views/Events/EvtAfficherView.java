@@ -5,27 +5,19 @@
  */
 package Views.Events;
 
-import Views.TerminalView;
-
 /**
  * GUI builder created Form
  *
  * @author dellpro
  */
-public class EvtAfficherGui extends com.codename1.ui.Form implements TerminalView{
+public class EvtAfficherView extends com.codename1.ui.Form {
 
-    public EvtAfficherGui() {
+    public EvtAfficherView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
     }
-    @Override
-    public void init_form()
-    {
-        TerminalView.super.init_form();
-    }
     
-    public EvtAfficherGui(com.codename1.ui.util.Resources resourceObjectInstance) {
+    public EvtAfficherView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
-        init_form();
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
