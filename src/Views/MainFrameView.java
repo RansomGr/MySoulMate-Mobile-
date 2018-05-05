@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Views.Matching.VoirMatchingView;
 import Views.User.UserAccountView;
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
@@ -53,7 +54,7 @@ public class MainFrameView extends com.codename1.ui.Form {
     tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {/* Votre fonction ici */}); 
     tb.addMaterialCommandToSideMenu("Evenemments", FontImage.MATERIAL_WEB, e -> {/* Votre fonction ici */});
     tb.addMaterialCommandToSideMenu("Relation", FontImage.MATERIAL_SETTINGS, e -> {/* Votre fonction ici */});
-    tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {/* Votre fonction ici */});  
+    tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {MyApplication.setCurrentView(new VoirMatchingView(MyApplication.getTheme()));});  
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
