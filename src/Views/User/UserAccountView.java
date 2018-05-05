@@ -16,6 +16,7 @@ import com.codename1.ui.FontImage;
 import com.codename1.ui.Image;
 import com.codename1.ui.RadioButton;
 import com.codename1.ui.TextField;
+import com.codename1.ui.Toolbar;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.DataChangedListener;
 import com.codename1.ui.events.FocusListener;
@@ -40,6 +41,12 @@ public class UserAccountView extends com.codename1.ui.Form {
     }
     public UserAccountView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
+          Command back = new Command("Back") {
+        public void actionPerformed(ActionEvent ev) {
+         MyApplication.getPreviousView().showBack();
+     }
+     };
+this.setBackCommand(back);     
         init_form();
         init_actions();
         

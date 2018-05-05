@@ -40,9 +40,8 @@ public class LoginView extends com.codename1.ui.Form {
              Su.fetchOneByCredentials(gui_username.getText(), gui_password.getText());
              if(MyApplication.getConnectedUser()!=null)
                  {
-
-                      ip.dispose();
-                     Toolbar.setGlobalToolbar(true);
+                     ip.dispose();
+                     MyApplication.enableTollBar(true);
                      MyApplication.setCurrentView(new MainFrameView(MyApplication.getTheme()));
                  }
              else
@@ -54,12 +53,7 @@ public class LoginView extends com.codename1.ui.Form {
                  }
                  }
          });
-      Command back = new Command("Back") {
-        public void actionPerformed(ActionEvent ev) {
-         MyApplication.getPreviousView().showBack();
-     }
-     };
-this.setBackCommand(back);     
+    
      }
     @Override
     public void layoutContainer() {

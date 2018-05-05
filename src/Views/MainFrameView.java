@@ -34,12 +34,12 @@ public class MainFrameView extends com.codename1.ui.Form {
     }
        private void init_MainFrameView()
     {
-        Toolbar tb=this.getToolbar();
-        
+        Toolbar tb=this.getToolbar();    
          Image  icon = MyApplication.getTheme().getImage("settings.png"); 
          icon=  icon.scaled(48, 48);
          Button b= new Button(icon);
          b.addActionListener((evt) -> {
+          MyApplication.enableTollBar(false);
           MyApplication.setCurrentView(new UserAccountView(MyApplication.getTheme()));
          });
          Container topBar = BorderLayout.west(new Label("MySoulMate"));
