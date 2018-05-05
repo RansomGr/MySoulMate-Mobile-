@@ -24,6 +24,7 @@ public class hableu extends AbstractView {
     private Container topBar;
     public hableu()
     {
+        //hableeeeeeu
         super();// call Super Class Constructor
       
         this.View=uib.createContainer(theme,"ui_MainFrame").getComponentForm();// Getting Instence of Form 
