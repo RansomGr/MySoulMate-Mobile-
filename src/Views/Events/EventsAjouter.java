@@ -53,13 +53,7 @@ public class EventsAjouter extends com.codename1.ui.Form{
         AjouterBtn = new Button("ajouter");
         
         AjouterBtn.addActionListener(e->{
-            /* 
-            if(titre.getText().isEmpty()||description.getText().isEmpty()){
-                 Dialog.show("remplissez tous les champs","ajout","ok",null);
-                 return;
-            }
-
-            */
+            
       
             evt.setHeure(titre.getText());
             evt.setDescriptionEvt(description.getText());
@@ -74,15 +68,7 @@ public class EventsAjouter extends com.codename1.ui.Form{
         
         AjouterForm.add(AjouterContainer);
         
-        //sideMenu(AjouterForm, res);
       }
     
-//      private void showToast(String text) {
-//        Image errorImage = FontImage.createMaterial(FontImage.MATERIAL_ERROR, UIManager.getInstance().getComponentStyle("Title"), 4);
-//        ToastBar.Status status = ToastBar.getInstance().createStatus();
-//        status.setMessage(text);
-//        status.setIcon(errorImage);
-//        status.setExpires(2000);
-//        status.show();
-//    }
+
 }
