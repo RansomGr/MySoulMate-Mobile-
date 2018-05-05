@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resource majorVersion="1" minorVersion="9" useXmlUI="false">
+    <image name="accepter_btn.png"  />
+    <image name="acheter_btn.png"  />
     <image name="android-icon.png" type="multi"  />
     <image name="apple-icon.png" type="multi"  />
     <image name="back-command.png" type="multi"  />
@@ -36,6 +38,7 @@
     <image name="ComboBox.sel#borderTop_2.png" type="multi"  />
     <image name="ComboBox.sel#borderTopL_2.png" type="multi"  />
     <image name="ComboBox.sel#borderTopR_2.png" type="multi"  />
+    <image name="compa_btn.png"  />
     <image name="default.png"  />
     <image name="Dialog.borderBottom_1.png" type="multi"  />
     <image name="Dialog.borderBottomL_1.png" type="multi"  />
@@ -48,6 +51,7 @@
     <image name="Dialog.borderTopR_1.png" type="multi"  />
     <image name="duke-no-logos.png" type="multi"  />
     <image name="heart.png"  />
+    <image name="inviter_btn.png"  />
     <image name="logo.png"  />
     <image name="Menu.borderBottom_1.png" type="multi"  />
     <image name="Menu.borderBottomL_1.png" type="multi"  />
@@ -69,6 +73,7 @@
     <image name="Profile_img.borderTop_1.png" type="multi"  />
     <image name="Profile_img.borderTopL_1.png" type="multi"  />
     <image name="Profile_img.borderTopR_1.png" type="multi"  />
+    <image name="refuser_btn.png"  />
     <image name="settings.png"  />
     <image name="sliderEmpty.png" type="multi"  />
     <image name="sliderEmptyLeft.png" type="multi"  />
