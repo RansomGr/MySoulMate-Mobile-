@@ -6,6 +6,7 @@
 package Views;
 
 import Views.Events.EventsLister;
+import Views.Plan.ListPlanView;
 import Views.User.UserAccountView;
 
 import com.codename1.ui.Button;
@@ -52,7 +53,7 @@ public class MainFrameView extends com.codename1.ui.Form {
         topBar.add(BorderLayout.CENTER,b);
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
-    tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {/* Votre fonction ici */}); 
+    tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {MyApplication.setCurrentView(this.renderTerminalView(ListPlanView.class));}); 
     tb.addMaterialCommandToSideMenu("Evenemments", FontImage.MATERIAL_WEB, e -> {EventsLister c = new EventsLister(MyApplication.getTheme()); c.getListForm().show(); });
     tb.addMaterialCommandToSideMenu("Relation", FontImage.MATERIAL_SETTINGS, e -> {/* Votre fonction ici */});
     tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {/* Votre fonction ici */});  
