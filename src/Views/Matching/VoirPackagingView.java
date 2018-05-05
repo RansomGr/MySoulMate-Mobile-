@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Events;
+package Views.Matching;
 
 /**
  * GUI builder created Form
  *
- * @author dellpro
+ * @author Nadia
  */
-public class EvtAfficherView extends com.codename1.ui.Form {
+public class VoirPackagingView extends com.codename1.ui.Form {
 
-    public EvtAfficherView() {
+    public VoirPackagingView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
     }
     
-    public EvtAfficherView(com.codename1.ui.util.Resources resourceObjectInstance) {
+    public VoirPackagingView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
@@ -28,8 +28,8 @@ public class EvtAfficherView extends com.codename1.ui.Form {
         setLayout(new com.codename1.ui.layouts.LayeredLayout());
         setInlineStylesTheme(resourceObjectInstance);
                 setInlineStylesTheme(resourceObjectInstance);
-        setTitle("EventsListerGui");
-        setName("EventsListerGui");
+        setTitle("VoirPackagingView");
+        setName("VoirPackagingView");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!

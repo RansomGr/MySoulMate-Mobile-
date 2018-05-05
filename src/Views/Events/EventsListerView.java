@@ -30,7 +30,16 @@ public class EventsListerView extends com.codename1.ui.Form implements TerminalV
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
+
+
+// <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initGuiBuilderComponents(com.codename1.ui.util.Resources resourceObjectInstance) {
-    }
+        setLayout(new com.codename1.ui.layouts.LayeredLayout());
+        setInlineStylesTheme(resourceObjectInstance);
+                setInlineStylesTheme(resourceObjectInstance);
+        setTitle("EventsAjouterGui");
+        setName("EventsAjouterGui");
+    }// </editor-fold>
+
 //-- DON'T EDIT ABOVE THIS LINE!!!
 }

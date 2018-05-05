@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="VoirMatchingView" scrollableY="true" name="VoirMatchingView">
+  <component type="Label" text="RETROUVEZ L'AMOUR" styles="font:4.0mm native:MainBold native:MainBold;" preferredSize="43.24161mm inherit" name="titre1">
+    <layoutConstraint insets="19.653479% 24.184488% auto 18.158527%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Label" text="DE VOTRE VIE!" styles="font:5.0mm native:MainBold native:MainBold;" preferredSize="42.636833mm 5.7453885mm" name="titre2">
+    <layoutConstraint insets="0.0mm 0.0mm auto 28.608923%" referenceComponents="0 0 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Container" layout="LayeredLayout" layeredLayoutPreferredWidthMM="111.88389" layeredLayoutPreferredHeightMM="62.140915"  uiid="Matchings_container" preferredSize="111.88389mm 62.140915mm" name="Container">
+    <layoutConstraint insets="32.802124% 4.8382187mm 12.616201% 3.7798615mm" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Voir plus de compatibilité" icon="fontImage:e87e" name="VoirPackaging_btn">
+    <layoutConstraint insets="0.0mm 0.0mm auto auto" referenceComponents="4 0 -1 -1" referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Ajouter mes préférences" icon="fontImage:e87d" name="AjoutPref_btn">
+    <layoutConstraint insets="2.1167226mm 0.0mm auto auto" referenceComponents="-1 0 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Button" text="Voir mes amis" name="VoirAmis_btn">
+    <layoutConstraint insets="auto 33.864544% 0.0mm auto" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+</component>
