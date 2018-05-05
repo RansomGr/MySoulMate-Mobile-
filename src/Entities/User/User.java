@@ -27,9 +27,10 @@ public class User {
     private String last_login;
     private String confirmation_token;
     private String role;
-    
+    private int adresse;
+    private int matchtot;
 
-    public User(int id, String nom, String prenom, String gender, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, String last_login, String confirmation_token, String role) {
+    public User(int id, String nom, String prenom, String gender, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, String last_login, String confirmation_token, String role,int adresse) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -44,6 +45,7 @@ public class User {
         this.last_login = last_login;
         this.confirmation_token = confirmation_token;
         this.role = role;
+        this.adresse=adresse;
     }
 
     public User() {
@@ -161,6 +163,23 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+    
+        public int getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(int adresse) {
+        this.adresse = adresse;
+    }
+    
+    
+    public int getMatchtot() {
+        return matchtot;
+    }
+
+    public void setMatchtot(int matchtot) {
+        this.matchtot = matchtot;
+    }
 
     public Date getDatenaissance() {
         return datenaissance;
@@ -176,7 +195,7 @@ public class User {
         return "User{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", gender=" + gender + ", username=" + username + ", username_canonical=" + username_canonical + ", email=" + email + ", email_canonical=" + email_canonical + ", enabled=" + enabled + ", salt=" + salt + ", password=" + password + ", last_login=" + last_login + ", confirmation_token=" + confirmation_token + ", role=" + role + '}';
     }
 
-    public User(String nom, String prenom, String gender, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, String last_login, String confirmation_token, String role) {
+    public User(String nom, String prenom, String gender, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, String last_login, String confirmation_token, String role, int adresse) {
         this.nom = nom;
         this.prenom = prenom;
         this.gender = gender;
@@ -190,6 +209,7 @@ public class User {
         this.last_login = last_login;
         this.confirmation_token = confirmation_token;
         this.role = role;
+        this.adresse = adresse;
     }
 
 
