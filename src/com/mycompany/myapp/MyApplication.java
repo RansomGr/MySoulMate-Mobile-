@@ -23,9 +23,9 @@ public class MyApplication {
     private static User ConnectedUser;
     public static Resources  getTheme(){return MyApplication.theme;}// Theme
     public static User getConnectedUser(){return MyApplication.ConnectedUser; }// Session owner
-    public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;}
+    public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;} // puttin the session owner 
     public static void setCurrentView(Form view){MyApplication.previous=current;MyApplication.current=view;MyApplication.current.show();}// switch the view remotly 
-    public static Form getPreviousView(){return MyApplication.previous;}
+    public static void showPreviousView(){previous.showBack();current=previous;}
     public static void enableTollBar(boolean state){Toolbar.setGlobalToolbar(state); }
     private static Form current;
     private static Form previous;

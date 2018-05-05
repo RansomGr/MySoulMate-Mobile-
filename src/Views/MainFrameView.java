@@ -6,9 +6,11 @@
 package Views;
 
 import Views.User.UserAccountView;
+
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
+import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.Toolbar;
@@ -38,9 +40,9 @@ public class MainFrameView extends com.codename1.ui.Form {
          Image  icon = MyApplication.getTheme().getImage("settings.png"); 
          icon=  icon.scaled(48, 48);
          Button b= new Button(icon);
-         b.addActionListener((evt) -> {
-          MyApplication.enableTollBar(false);
-          MyApplication.setCurrentView(new UserAccountView(MyApplication.getTheme()));
+         b.addActionListener((evt) -> {  
+         MyApplication.enableTollBar(false);
+         MyApplication.setCurrentView(this.renderTerminalView(UserAccountView.class));
          });
          Container topBar = BorderLayout.west(new Label("MySoulMate"));
          b.addActionListener((ActionEvent evt )-> {
@@ -49,12 +51,25 @@ public class MainFrameView extends com.codename1.ui.Form {
         topBar.add(BorderLayout.CENTER,b);
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
-
     tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {/* Votre fonction ici */}); 
     tb.addMaterialCommandToSideMenu("Evenemments", FontImage.MATERIAL_WEB, e -> {/* Votre fonction ici */});
     tb.addMaterialCommandToSideMenu("Relation", FontImage.MATERIAL_SETTINGS, e -> {/* Votre fonction ici */});
     tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {/* Votre fonction ici */});  
     }
+     private Form renderTerminalView(Class s ) //an instance of TerminalView 
+     {
+        MyApplication.enableTollBar(false);
+        this.getToolbar().closeSideMenu();
+        Object o=null;
+        try {
+            o = s.newInstance();
+        } catch (InstantiationException | IllegalAccessException ex) {
+            System.out.println("Casting error check if your Class implements TerminalView");
+        }
+        TerminalView V;
+        V=(TerminalView)o;
+         return (Form)V ;
+     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
 
