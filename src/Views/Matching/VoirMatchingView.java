@@ -5,6 +5,7 @@
  */
 package Views.Matching;
 
+import Views.TerminalView;
 import com.mycompany.myapp.MyApplication;
 
 /**
@@ -12,7 +13,7 @@ import com.mycompany.myapp.MyApplication;
  *
  * @author Nadia
  */
-public class VoirMatchingView extends com.codename1.ui.Form {
+public class VoirMatchingView extends com.codename1.ui.Form implements TerminalView{
 
     public VoirMatchingView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
@@ -24,6 +25,7 @@ public class VoirMatchingView extends com.codename1.ui.Form {
        gui_VoirAmis_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new VoirAmisView(MyApplication.getTheme()));});
       
     }
+    
 
 //-- DON'T EDIT BELOW THIS LINE!!!
     private com.codename1.ui.Label gui_titre1 = new com.codename1.ui.Label();
