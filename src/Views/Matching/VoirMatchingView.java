@@ -6,6 +6,7 @@
 package Views.Matching;
 
 import Views.TerminalView;
+import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.myapp.MyApplication;
 
 /**
@@ -17,15 +18,24 @@ public class VoirMatchingView extends com.codename1.ui.Form implements TerminalV
 
     public VoirMatchingView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
+        init_form();
     }
     
     public VoirMatchingView(com.codename1.ui.util.Resources resourceObjectInstance) {
        gui_AjoutPref_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new AjouterPrefView(MyApplication.getTheme()));});
        gui_VoirPackaging_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new VoirPackagingView(MyApplication.getTheme()));});
        gui_VoirAmis_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new VoirAmisView(MyApplication.getTheme()));});
-      
+      init_form();
     }
     
+      @Override
+    public void init_form()
+    {
+        TerminalView.super.init_form();
+         this.setLayout(BoxLayout.y());
+        this.addComponent(new UserView());
+       
+    }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
     private com.codename1.ui.Label gui_titre1 = new com.codename1.ui.Label();
