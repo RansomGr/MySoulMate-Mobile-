@@ -7,25 +7,26 @@ package Service.User;
 
 import Entities.User.User;
 import InternalAPI.CustomEspritJSONParser;
+import Service.Service;
 import Views.User.ForgotView;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
-import com.codename1.ui.List;
 import com.mycompany.myapp.MyApplication;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
  *
  * @author Ransom
  */
-public class ServiceUser implements Service.Service {
+public class ServiceUser implements Service<User> {
 
     @Override
-    public void create(Object o) {
+    public void create(User o) {
         /*private int id;
     private String nom;
     private String prenom;
@@ -61,22 +62,22 @@ public class ServiceUser implements Service.Service {
     }
 
     @Override
-    public void update(Object o) {
+    public void update(User o) {
 
     }
 
     @Override
-    public void remove(Object o) {
+    public void remove(User o) {
      
     }
 
     @Override
-    public List<? extends Object> fetchAll() {
+    public List<User> fetchAll() {
    return null;
     }
 
     @Override
-    public Object fetchOneById() {
+    public Object fetchOneById(int id) {
     return null;
     }
     public void checkEmail(String email)
@@ -114,8 +115,7 @@ public class ServiceUser implements Service.Service {
          });
          NetworkManager.getInstance().addToQueueAndWait(con);   
     }
-    public void fetchOneByCredentials(String login,String password)
-    {
+    public void fetchOneByCredentials(String login,String password){
         User Utilisateur= new User();
         con.setUrl(url+"User?login="+login+"&password="+password);
         con.addResponseListener((NetworkEvent evt) -> {
@@ -140,6 +140,5 @@ public class ServiceUser implements Service.Service {
         });
         NetworkManager.getInstance().addToQueueAndWait(con);   
     }
- 
     
 }
