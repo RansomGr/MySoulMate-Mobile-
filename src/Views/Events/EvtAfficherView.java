@@ -5,28 +5,19 @@
  */
 package Views.Events;
 
-import Views.TerminalView;
-
 /**
  * GUI builder created Form
  *
  * @author dellpro
  */
-public class EventsListerGui extends com.codename1.ui.Form implements TerminalView{
+public class EvtAfficherView extends com.codename1.ui.Form {
 
-    public EventsListerGui() {
+    public EvtAfficherView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
-        init_form();
-    }
-    @Override
-    public void init_form()
-    {
-        TerminalView.super.init_form();
     }
     
-    public EventsListerGui(com.codename1.ui.util.Resources resourceObjectInstance) {
+    public EvtAfficherView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
-        init_form();
     }
 
 //-- DON'T EDIT BELOW THIS LINE!!!
@@ -37,8 +28,8 @@ public class EventsListerGui extends com.codename1.ui.Form implements TerminalVi
         setLayout(new com.codename1.ui.layouts.LayeredLayout());
         setInlineStylesTheme(resourceObjectInstance);
                 setInlineStylesTheme(resourceObjectInstance);
-        setTitle("EventsListerGui");
-        setName("EventsListerGui");
+        setTitle("EvtAfficherView");
+        setName("EvtAfficherView");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!
