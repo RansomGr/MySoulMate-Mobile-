@@ -23,11 +23,13 @@ public class Caracteristique {
     private String caractere;
     private String statut;
     private String cuisine;
+    private String origine;
 
-        public Caracteristique( String corpulence, String pilosite, String profession, String alcool, String tabac, String taille, String cheveux, String yeux, String caractere, String statut, String cuisine) {
+        public Caracteristique( String corpulence, String pilosite, String origine, String profession, String alcool, String tabac, String taille, String cheveux, String yeux, String caractere, String statut, String cuisine) {
         // this.ID = -1;
         this.corpulence = corpulence;
         this.pilosite = pilosite;
+        this.origine= origine;
         this.profession = profession;
         this.alcool = alcool;
         this.tabac = tabac;
@@ -43,6 +45,7 @@ public class Caracteristique {
         this.ID = ID;
         this.corpulence = corpulence;
         this.pilosite = pilosite;
+        this.origine= origine;
         this.profession = profession;
         this.alcool = alcool;
         this.tabac = tabac;
@@ -76,6 +79,14 @@ public class Caracteristique {
 
     public void setPilosite(String pilosite) {
         this.pilosite = pilosite;
+    }
+    
+    public String getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(String origine) {
+        this.origine = origine;
     }
 
     public String getProfession() {
