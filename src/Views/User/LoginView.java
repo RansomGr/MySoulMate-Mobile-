@@ -5,16 +5,12 @@
  */
 package Views.User;
 
-import Entities.User.User;
 import Service.User.ServiceUser;
 import Views.MainFrameView;
 import com.codename1.components.InfiniteProgress;
-import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.TextField;
-import com.codename1.ui.Toolbar;
-import com.codename1.ui.events.ActionEvent;
 import com.mycompany.myapp.MyApplication;
 
 /**
