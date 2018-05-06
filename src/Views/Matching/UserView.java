@@ -5,6 +5,13 @@
  */
 package Views.Matching;
 
+import Entities.User.User;
+import Service.Matching.ServiceMatching;
+import com.codename1.io.ConnectionRequest;
+import com.codename1.io.NetworkEvent;
+import com.codename1.io.NetworkManager;
+import java.util.ArrayList;
+
 /**
  * GUI builder created Container
  *
@@ -12,14 +19,40 @@ package Views.Matching;
  */
 public class UserView extends com.codename1.ui.Container {
 
-    public UserView() {
+    public UserView(User a) {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         gui_nom_label.setText("7abcha9leu");
         gui_compa_label.setText("descripetion test");
         gui_Button.addActionListener((evt) -> {
-            // ...
+        ServiceMatching service = new ServiceMatching();
+        //service.Inviter( a.getNom() );
         });
+                
+        
+        
+        ServiceMatching controller = new ServiceMatching();
+        ConnectionRequest req = new ConnectionRequest();
+        req.setUrl("http://localhost/MySoulMate-Symphony/web/app_dev.php/ ");
+        req.addResponseListener((NetworkEvent evt) -> {
+            
+            ArrayList<User> matchings = controller.getList2();
+            for (int i = 0; i < matchings.size(); i++) {
+                      
+                        matchings.get(i).getProfil().getPhoto() ;
+                        matchings.get(i).getUsername();
+                        matchings.get(i).getAdresse().getVille()  ;
+                        matchings.get(i).getMatchtot();
+                        
+               
+            }
+
+        });
+
+        NetworkManager.getInstance().addToQueue(req);
+        refreshTheme();
+
     }
+    
     
     public UserView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);

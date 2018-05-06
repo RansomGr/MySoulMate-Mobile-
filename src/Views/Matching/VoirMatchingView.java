@@ -5,37 +5,78 @@
  */
 package Views.Matching;
 
+import Entities.User.User;
+import Service.Matching.ServiceMatching;
 import Views.TerminalView;
+import com.codename1.components.SpanLabel;
+import com.codename1.io.ConnectionRequest;
+import com.codename1.io.FileSystemStorage;
+import com.codename1.io.NetworkEvent;
+import com.codename1.io.NetworkManager;
+import com.codename1.ui.Display;
+import com.codename1.ui.EncodedImage;
+import com.codename1.ui.Image;
+import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.layouts.TextModeLayout;
+import com.codename1.ui.list.DefaultListModel;
+import com.codename1.ui.list.MultiList;
+import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.MyApplication;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * GUI builder created Form
  *
  * @author Nadia
  */
-public class VoirMatchingView extends com.codename1.ui.Form implements TerminalView{
+public class VoirMatchingView extends com.codename1.ui.Form implements TerminalView {
 
+    ServiceMatching service=new ServiceMatching();
+    ArrayList<User> matchings = new ArrayList<>();
+    SpanLabel lb;
+    
     public VoirMatchingView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         init_form();
     }
-    
+
     public VoirMatchingView(com.codename1.ui.util.Resources resourceObjectInstance) {
-       gui_AjoutPref_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new AjouterPrefView(MyApplication.getTheme()));});
-       gui_VoirPackaging_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new VoirPackagingView(MyApplication.getTheme()));});
-       gui_VoirAmis_btn.addActionListener((evt) -> {MyApplication.setCurrentView(new VoirAmisView(MyApplication.getTheme()));});
-      init_form();
+        gui_AjoutPref_btn.addActionListener((evt) -> {
+            MyApplication.setCurrentView(new AjouterPrefView(MyApplication.getTheme()));
+        });
+        gui_VoirPackaging_btn.addActionListener((evt) -> {
+            MyApplication.setCurrentView(new VoirPackagingView(MyApplication.getTheme()));
+        });
+        gui_VoirAmis_btn.addActionListener((evt) -> {
+            MyApplication.setCurrentView(new VoirAmisView(MyApplication.getTheme()));
+        });
+        init_form();
     }
     
-      @Override
+    
+    @Override
     public void init_form()
     {
         TerminalView.super.init_form();
          this.setLayout(BoxLayout.y());
-        this.addComponent(new UserView());
+        TextModeLayout tm = new TextModeLayout(4, 2);
+        
+               
+        lb = new SpanLabel("");
+        this.add(lb);
+        service =new ServiceMatching();
+        matchings = service.getList2();
+        //if(matchings!=null && !matchings.isEmpty())
+        //{initi();}
        
     }
+
+
 
 //-- DON'T EDIT BELOW THIS LINE!!!
     private com.codename1.ui.Label gui_titre1 = new com.codename1.ui.Label();
