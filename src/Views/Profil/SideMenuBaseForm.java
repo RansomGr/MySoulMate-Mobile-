@@ -63,10 +63,10 @@ public abstract class SideMenuBaseForm extends Form {
         sidemenuTop.setUIID("SidemenuTop");
         
         getToolbar().addComponentToSideMenu(sidemenuTop);
-        getToolbar().addMaterialCommandToSideMenu("  Profile", FontImage.MATERIAL_DASHBOARD,  e -> new ProfileForm(res).show());
-        getToolbar().addMaterialCommandToSideMenu("  Actualités", FontImage.MATERIAL_TRENDING_UP,  e -> new ActualiteForm(res).show());
-        getToolbar().addMaterialCommandToSideMenu("  Ajouter Actualité", FontImage.MATERIAL_TRENDING_UP,  e -> new AddActualiteForm(res).show());
-        getToolbar().addMaterialCommandToSideMenu("  Horoscope", FontImage.MATERIAL_TRENDING_UP,  e -> new HoroscopeForm(res).show());
+ //       getToolbar().addMaterialCommandToSideMenu("  Profile", FontImage.MATERIAL_DASHBOARD,  e -> new ProfileForm(res).show());
+       // getToolbar().addMaterialCommandToSideMenu("  Actualités", FontImage.MATERIAL_TRENDING_UP,  e -> new ActualiteForm(res).show());
+      //  getToolbar().addMaterialCommandToSideMenu("  Ajouter Actualité", FontImage.MATERIAL_TRENDING_UP,  e -> new AddActualiteForm(res).show());
+        //getToolbar().addMaterialCommandToSideMenu("  Horoscope", FontImage.MATERIAL_TRENDING_UP,  e -> new HoroscopeForm(res).show());
     
     }
     protected abstract void showOtherForm(Resources res);

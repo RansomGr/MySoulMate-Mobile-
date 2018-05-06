@@ -22,6 +22,11 @@ public interface Service<T> {
    //s cache clear --env=prod)
    //final String url="http://192.168.1.8/MySoulMate-Symphony/web/"; // server side
     
+  //final String url="http://192.168.1.8/MySoulMate-Symphony/web/"; // server side
+  // final String url="http://localhost/MySoulMate-Symphony/web/app_dev.php/"; // localhost app_dev
+//  final String url="http://localhost/MySoulMate-Symphony/web/"; // localhost app (use command
+
+  // final String url="http://192.168.1.8/MySoulMate-Symphony/web/"; // server side
    public void  create(T o);
    public void  update(T o);
    public void  remove(T o);

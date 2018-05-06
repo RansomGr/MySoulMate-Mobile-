@@ -29,5 +29,6 @@ public class Test extends Form  {
         gui_Label.setName("Label");
         ((com.codename1.ui.layouts.LayeredLayout)gui_Label.getParent().getLayout()).setInsets(gui_Label, "16.463415% auto auto 28.772919%").setReferenceComponents(gui_Label, "-1 -1 -1 -1").setReferencePositions(gui_Label, "0.0 0.0 0.0 0.0");
     }// </editor-fold>
+
 //-- DON'T EDIT ABOVE THIS LINE!!!
 }

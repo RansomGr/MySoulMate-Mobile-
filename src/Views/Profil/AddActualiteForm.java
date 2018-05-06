@@ -1,12 +1,12 @@
 package Views.Profil;
 
 import Utils.Constants;
+import Views.TerminalView;
 import com.codename1.capture.Capture;
 import com.codename1.components.ToastBar;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.FileSystemStorage;
 import com.codename1.io.Log;
-import com.codename1.io.MultipartRequest;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.Button;
@@ -14,7 +14,6 @@ import static com.codename1.ui.CN.openGallery;
 import static com.codename1.ui.CN1Constants.GALLERY_IMAGE;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
-import com.codename1.ui.Display;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
@@ -25,6 +24,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.validation.LengthConstraint;
 import com.codename1.ui.validation.Validator;
+import com.mycompany.myapp.MyApplication;
 import java.io.IOException;
 
 
@@ -35,28 +35,34 @@ import java.io.IOException;
  */
 
 
-public class AddActualiteForm extends SideMenuBaseForm {
+public class AddActualiteForm extends com.codename1.ui.Form implements TerminalView {
 
      Image img = null;
      Image toupload = null;
      Image image = null;
      String fileName;
      String filePath;
+     @Override
+     public void init_form()
+     {
+         TerminalView.super.init_form();
+     }
      private ConnectionRequest connexion; 
-     public AddActualiteForm(Resources res) {
-        super("Gestion Actualité",new BorderLayout());
+     public AddActualiteForm() {
+       init_form();
+       this.setTitle("Nouvelle Actualite");
+       this.setLayout(BoxLayout.y());
+      
+  
         
-        Toolbar tb = getToolbar();
-        tb.setTitleCentered(false);
-
         
         Button avatar = new Button("Insérer une image");       
         Image defaultAvatar = FontImage.createMaterial(FontImage.MATERIAL_CAMERA,"round-mask.png", 8);
-        Image circleMaskImage = res.getImage("round-mask.png");
-        defaultAvatar = defaultAvatar.scaled(circleMaskImage.getWidth(), circleMaskImage.getHeight());
+     //   Image circleMaskImage = MyApplication.getTheme().getImage("round-mask.png");
+   //     defaultAvatar = defaultAvatar.scaled(circleMaskImage.getWidth(), circleMaskImage.getHeight());
         defaultAvatar = ((FontImage)defaultAvatar).toEncodedImage();
-        Object circleMask = circleMaskImage.createMask();
-        defaultAvatar = defaultAvatar.applyMask(circleMask);
+  //      Object circleMask = circleMaskImage.createMask();
+  //      defaultAvatar = defaultAvatar.applyMask(circleMask);
         avatar.setIcon(defaultAvatar);
         
         avatar.addActionListener(e -> {
@@ -64,11 +70,8 @@ public class AddActualiteForm extends SideMenuBaseForm {
                 String pic = Capture.capturePhoto();
                 if(pic != null) {
                     try {
-                        Image img = Image.createImage(pic).fill(circleMaskImage.getWidth(), circleMaskImage.getHeight());
-                        avatar.setIcon(img.applyMask(circleMask));
-                        
+                        Image img = Image.createImage(pic);
                         System.out.println(Capture.capturePhoto());
-                        
                     } catch(IOException err) {
                         ToastBar.showErrorMessage("An error occured while loading the image: " + err);
                         Log.e(err);
@@ -78,8 +81,8 @@ public class AddActualiteForm extends SideMenuBaseForm {
                 openGallery(ee -> {
                     if(ee.getSource() != null) {
                         try {
-                            Image imageAppercu = Image.createImage((String)ee.getSource()).fill(circleMaskImage.getWidth(), circleMaskImage.getHeight());
-                            
+                            Image imageAppercu = Image.createImage((String)ee.getSource());
+                            imageAppercu=imageAppercu.scaled(50, 50);
                             filePath = (String) ee.getSource();
                             int fileNameIndex = filePath.lastIndexOf("/") + 1;
                             fileName = filePath.substring(fileNameIndex);
@@ -97,7 +100,7 @@ public class AddActualiteForm extends SideMenuBaseForm {
                                 ex.printStackTrace();
                             }
                             
-                            avatar.setIcon(imageAppercu.applyMask(circleMask));
+                            avatar.setIcon(imageAppercu);
                         } catch(IOException err) {
                             ToastBar.showErrorMessage("An error occured while loading the image: " + err);
                             Log.e(err);
@@ -126,7 +129,7 @@ public class AddActualiteForm extends SideMenuBaseForm {
             
             previous.addActionListener(e-> {
               
-                new ProfileForm(res).show();
+             //   new ProfileForm(res).show();
                 
             });
         
@@ -135,13 +138,11 @@ public class AddActualiteForm extends SideMenuBaseForm {
                 contenu,
                 avatar,
                 imageName,
-                valider,
-                previous
-       
+                valider
         );
         
         content.setScrollableY(true);
-        add(BorderLayout.SOUTH, content);
+        this.add(content);
         valider.requestFocus();
         
         
@@ -175,7 +176,7 @@ public class AddActualiteForm extends SideMenuBaseForm {
                         connexion.addRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                         connexion.addResponseListener((NetworkEvent evt) -> {
                         if(Dialog.show("Felicitation", "Actualité ajouter avec succés", "Voir les autres actualités", null)){
-                           new ActualiteForm(res).show();
+                         MyApplication.showPreviousView();
                         }
                                     
                      });
@@ -192,10 +193,6 @@ public class AddActualiteForm extends SideMenuBaseForm {
     
 
 
-    @Override
-    protected void showOtherForm(Resources res) {
-     
-    }
   
   
 }

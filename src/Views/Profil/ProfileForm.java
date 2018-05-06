@@ -21,7 +21,9 @@ package Views.Profil;
 
 import Entities.Profil.Profil;
 import Service.Profil.ProfileService;
+import Singletons.BackCommand;
 import Utils.Constants;
+import Views.TerminalView;
 import com.codename1.components.FloatingActionButton;
 import com.codename1.components.ImageViewer;
 import com.codename1.components.MultiButton;
@@ -47,14 +49,21 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.MyApplication;
 
-public class ProfileForm extends SideMenuBaseForm {
-    
+public class ProfileForm extends com.codename1.ui.Form implements TerminalView{
             private Profil profile;
-            public ProfileForm(Resources res) {
-            super(BoxLayout.y());
+            @Override
+            public void init_form()
+            {
+                TerminalView.super.init_form();
+                
+            }
+            public ProfileForm() {
+                  init_form();
+                  this.setLayout(BoxLayout.y());
+                  this.setTitle("Profile");
+          
             Toolbar tb = getToolbar();
-            tb.setTitleCentered(false);
-        
+    //        tb.setTitleCentered(false);
             ProfileService profileService = new ProfileService();
             ConnectionRequest req = new ConnectionRequest();
             req.setUrl(Constants.GET_PROFILE+"?idUser="+1);    
@@ -71,16 +80,13 @@ public class ProfileForm extends SideMenuBaseForm {
                addButtonBottom("Prenom : "+MyApplication.getConnectedUser().getPrenom(), 0x5ae29d, false);
                addButtonBottom("Gender : "+MyApplication.getConnectedUser().getGender(), 0x4dc2ff, false);
                addButtonBottom("Description : "+profile.getDescription(), 0xffc06f, false);
-               
-               
-               
                  Image profilePic = image.getImage();
-                 Image mask = res.getImage("round-mask.png");
+                // Image mask = res.getImage("round-mask.png");
        
         
-        profilePic =profilePic.fill(mask.getWidth(), mask.getHeight());
-        Label profilePicLabel = new Label(profilePic, "ProfilePicTitle");
-        profilePicLabel.setMask(mask.createMask());
+     //   profilePic =profilePic.fill(mask.getWidth(), mask.getHeight());
+      //  Label profilePicLabel = new Label(profilePic, "ProfilePicTitle");
+     //   profilePicLabel.setMask(mask.createMask());
 
         Button menuButton = new Button("");
         menuButton.setUIID("Title");
@@ -96,14 +102,14 @@ public class ProfileForm extends SideMenuBaseForm {
                                     new Label(MyApplication.getConnectedUser().getUsername(), "Title"),
                                     new Label(MyApplication.getConnectedUser().getEmail(), "SubTitle")
                                 )
-                            ).add(BorderLayout.WEST, profilePicLabel)
+                            ).add(BorderLayout.WEST, new Label("7ableu"))
                        
                 );
         
         FloatingActionButton fab = FloatingActionButton.createFAB(FontImage.MATERIAL_ADD);
         fab.getAllStyles().setMarginUnit(Style.UNIT_TYPE_PIXELS);
         fab.setHidden(true);
-        tb.setTitleComponent(fab.bindFabToContainer(titleCmp, CENTER, BOTTOM));
+//        tb.setTitleComponent(fab.bindFabToContainer(titleCmp, CENTER, BOTTOM));
             
             FloatingActionButton addCaraceristique = FloatingActionButton.createFAB(FontImage.MATERIAL_ADD);
             FloatingActionButton getCaraceristique = FloatingActionButton.createFAB(FontImage.MATERIAL_TOC);
@@ -111,14 +117,18 @@ public class ProfileForm extends SideMenuBaseForm {
             
                   
              addCaraceristique.addActionListener((ActionListener) (ActionEvent evt1) -> {
-                new AddCaracteristiqueForm(res).show();
-          
+                 AddCaracteristiqueForm f = 
+                new AddCaracteristiqueForm(MyApplication.getTheme());
+                 f.setBackCommand(BackCommand.getInstance());
+                 f.show();
             });
              
              
                      
-             getCaraceristique.addActionListener((ActionListener) (ActionEvent evt1) -> {
-                   new CaracteristiqueForm(res, profile.getCaracteristique()).show();               
+             getCaraceristique.addActionListener((ActionListener) (ActionEvent evt1) -> {   
+             CaracteristiqueForm f=   new CaracteristiqueForm(MyApplication.getTheme(),profile.getCaracteristique());
+              f.setBackCommand(BackCommand.getInstance());
+              f.show();
             });
              
      
@@ -137,7 +147,7 @@ public class ProfileForm extends SideMenuBaseForm {
          refreshTheme();
          });
          NetworkManager.getInstance().addToQueue(req);
-         setupSideMenu(res);
+         //setupSideMenu(res);
      
     }
     
@@ -166,8 +176,5 @@ public class ProfileForm extends SideMenuBaseForm {
         return img;
     }
 
-    @Override
-    protected void showOtherForm(Resources res) {
-       
-    }
+  
 }

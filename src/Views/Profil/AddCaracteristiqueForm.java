@@ -37,10 +37,8 @@ public class AddCaracteristiqueForm extends SideMenuBaseForm {
     
      private ConnectionRequest connexion; 
      public AddCaracteristiqueForm(Resources res) {
-        super("Gestion Caractéristique",new BorderLayout());
-       
-             Toolbar tb = getToolbar();
-             tb.setTitleCentered(false);
+        super("Caractéristique",new BorderLayout());
+
 
         Button valider = new Button("valider");
         valider.setUIID("ButtonNew");
@@ -127,7 +125,7 @@ public class AddCaracteristiqueForm extends SideMenuBaseForm {
                         connexion.addRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                         connexion.addResponseListener((NetworkEvent evt) -> {
                         if(Dialog.show("Felicitation", "les caractéristique sont enregistrer avec succés", "Voir profile", null)){
-                            new ProfileForm(res).show();
+                      //      new ProfileForm(res).show();
                         }
                        
                        
