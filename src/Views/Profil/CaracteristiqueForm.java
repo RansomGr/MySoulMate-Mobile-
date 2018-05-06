@@ -2,12 +2,7 @@ package Views.Profil;
 
 import Entities.Profil.Caracteristique;
 
-import Service.Profil.CaracteristiqueService;
-import Utils.Constants;
-import com.codename1.io.ConnectionRequest;
-import com.codename1.io.NetworkEvent;
-import com.codename1.io.NetworkManager;
-import com.codename1.ui.Button;
+
 import com.codename1.ui.Component;
 import com.codename1.ui.Font;
 import com.codename1.ui.FontImage;
@@ -17,25 +12,15 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 
 /**
- * @author SKINN
+ * @author Sofien
  */
 public class CaracteristiqueForm extends SideMenuBaseForm {
 
     public CaracteristiqueForm(Resources res, Caracteristique c) {
 
-        super("Détails Caractéristique", BoxLayout.y());
-        
-
-        CaracteristiqueService caracteristiqueService = new CaracteristiqueService();
-        ConnectionRequest req = new ConnectionRequest();
-      //  req.setUrl(Constants.GET_CARACTERISTIQUE + "?id=" + id);
-        req.addResponseListener((NetworkEvent evt) -> {
-
-       //     Caracteristique c = caracteristiqueService.ParseCaracteristique(new String(req.getResponseData())).get(0);
-
+        super("Détails Caractéristique", BoxLayout.y());   
             Font largeBoldMonospaceFont = Font.createSystemFont(Font.FACE_MONOSPACE, Font.STYLE_BOLD, Font.SIZE_SMALL);
             Font large = Font.createSystemFont(Font.FACE_MONOSPACE, Font.STYLE_BOLD, Font.SIZE_LARGE);
-            
             Label alcool = new Label(c.getAlcool());
             alcool.setUIID("Label");
             addStringValue("Alcool", alcool);
@@ -119,22 +104,7 @@ public class CaracteristiqueForm extends SideMenuBaseForm {
             yeux.getStyle().setFgColor(0x2d3436);
             yeux.getUnselectedStyle().setFont(largeBoldMonospaceFont);
             FontImage.setMaterialIcon(yeux, FontImage.MATERIAL_VISIBILITY);
-
-            Button previous = new Button("Précédent");
-            previous.setUIID("ButtonNew");
-            add(previous);
-            
-            
-            previous.addActionListener(e-> {
-              
-                new ProfileForm(res).show();
-                
-            });
-            
-            
             refreshTheme();
-        });
-        NetworkManager.getInstance().addToQueue(req);
 
     }
 

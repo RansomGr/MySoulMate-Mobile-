@@ -1,6 +1,7 @@
 package Views.Profil;
 
 import Utils.Constants;
+import Views.TerminalView;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -20,6 +21,7 @@ import com.codename1.ui.validation.LengthConstraint;
 import com.codename1.ui.validation.NumericConstraint;
 import com.codename1.ui.validation.RegexConstraint;
 import com.codename1.ui.validation.Validator;
+import com.mycompany.myapp.MyApplication;
 import java.io.IOException;
 import java.util.Map;
 
@@ -27,12 +29,19 @@ import java.util.Map;
  *
  * @author SKIIN
  */
-public class HoroscopeForm extends SideMenuBaseForm {
+public class HoroscopeForm extends com.codename1.ui.Form implements TerminalView{
 
     private int rc, ri, re;
-
-    public HoroscopeForm(Resources res) {
-        super("Gestion Actualité", new BorderLayout());
+     @Override
+     public void init_form()
+     {
+         TerminalView.super.init_form();
+     }
+    public HoroscopeForm() {
+        
+        super("Horoscope", new BorderLayout());
+        init_form();
+        Resources res = MyApplication.getTheme();
         Toolbar tb = new Toolbar(true);
 
         Label sapce = new Label("");
@@ -194,9 +203,6 @@ public class HoroscopeForm extends SideMenuBaseForm {
 
     }
 
-    @Override
-    protected void showOtherForm(Resources res) {
-
-    }
+ 
 
 }

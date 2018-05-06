@@ -33,7 +33,6 @@ public class ActualiteForm extends SideMenuBaseForm {
     public ActualiteForm(Resources res) {
         super("Tout les Actualités", BoxLayout.y());
         Toolbar tb = new Toolbar(true);
-       
         setupSideMenu(res);
         ActualiteService controller = new ActualiteService();
         ConnectionRequest req = new ConnectionRequest();
@@ -69,10 +68,6 @@ public class ActualiteForm extends SideMenuBaseForm {
         button.setUIID("Label");
         Container cnt = BorderLayout.west(image);
         cnt.setLeadComponent(button);
-      
-       
-
-        
         Label ta = new Label(title, "Label");
         //set font motif to label
         FontImage.setMaterialIcon(ta, FontImage.MATERIAL_DATE_RANGE);

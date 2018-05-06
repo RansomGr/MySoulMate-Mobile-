@@ -101,7 +101,6 @@ public class ServiceUser implements Service<User> {
                  else
                   ForgotView.reply(false);   
                  } catch (IOException ex) {
-              
              }
          });
         NetworkManager.getInstance().addToQueueAndWait(con);  
