@@ -5,6 +5,7 @@
  */
 package Service.Matching;
 
+import Entities.User.Adresse;
 import Entities.User.User;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
@@ -24,7 +25,7 @@ import java.util.Map;
 public class ServiceMatching {
     
 
-    public ArrayList<User> getList2() {
+    public ArrayList<User> getList2(String response) {
         ArrayList<User> listTasks = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
         con.setUrl("http://localhost/MySoulMate-Symphony/web/app_dev.php/Client/FO_matching_homepageM");
@@ -46,7 +47,7 @@ public class ServiceMatching {
                         
                         task.setId((int) id);
                         task.setPrenom(obj.get("nom").toString());
-                        task.setAdresse( (int) obj.get("adresse") );
+                        task.setAdresse((Adresse) obj.get("adresse"));
                         task.setMatchtot((int) obj.get("matchtot"));
                         listTasks.add(task);
 
