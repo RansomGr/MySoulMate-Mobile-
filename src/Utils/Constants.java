@@ -12,7 +12,7 @@ public class Constants {
     
        public final static String BASE_URL = Service.getUrl()+"api/";
        public final static String IMAGE_ACTUALITE_URL = Service.getUrl()+"uploads/actualite/";
-       public final static String IMAGE_PROFILE_URL = Service.getUrl()+"uploads/profile/";
+       public final static String IMAGE_PROFILE_URL = Service.getUrl()+"images/";
        public final static String GET_PROFILE= BASE_URL+"profile/get";
        public final static String ADD_PROFILE= BASE_URL+"profile/add";
        public final static String GET_CARACTERISTIQUE = BASE_URL+"caracteristique/get";
