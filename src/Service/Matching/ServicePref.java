@@ -12,18 +12,20 @@ import com.codename1.io.ConnectionRequest;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.List;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 import static javafx.scene.input.KeyCode.T;
 
 /**
  *
  * @author Nadia
  */
-public class ServicePref implements Service {
+public class ServicePref implements Service<Caracteristique> {
     
-        @Override
-    public void create(Object o) {
-       
+     
+    
+
+    @Override
+    public void create(Caracteristique o) {
+         
         Caracteristique a=(Caracteristique)o;
           con.setUrl("http://localhost/MySoulMate-Symphony/web/app_dev.php"+
                   "/Client/FO_ajouterPrefM?corpulence="+a.getCorpulence()+
@@ -49,19 +51,24 @@ public class ServicePref implements Service {
           NetworkManager.getInstance().addToQueueAndWait(con);
            
     }
-    
-    
-   public java.util.List<Template> fetchAll(){return null;}
-   public Object fetchOneById(int id){return null;}
-   public static String getUrl(){return Service.url;}
-    
-        @Override
-    public void update(Object o) {
 
+    @Override
+    public void update(Caracteristique o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void remove(Object o) {
-     
+    public void remove(Caracteristique o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public java.util.List<Caracteristique> fetchAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object fetchOneById(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
