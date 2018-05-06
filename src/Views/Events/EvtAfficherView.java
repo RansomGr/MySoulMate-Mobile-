@@ -28,8 +28,8 @@ public class EvtAfficherView extends com.codename1.ui.Form {
         setLayout(new com.codename1.ui.layouts.LayeredLayout());
         setInlineStylesTheme(resourceObjectInstance);
                 setInlineStylesTheme(resourceObjectInstance);
-        setTitle("EventsListerGui");
-        setName("EventsListerGui");
+        setTitle("EvtAfficherView");
+        setName("EvtAfficherView");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!

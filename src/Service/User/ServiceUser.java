@@ -7,6 +7,7 @@ package Service.User;
 
 import Entities.User.User;
 import InternalAPI.CustomEspritJSONParser;
+import Views.User.ForgotView;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
@@ -16,6 +17,7 @@ import com.mycompany.myapp.MyApplication;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
+
 /**
  *
  * @author Ransom
@@ -76,6 +78,41 @@ public class ServiceUser implements Service.Service {
     @Override
     public Object fetchOneById() {
     return null;
+    }
+    public void checkEmail(String email)
+    {   
+        con.setPost(false);
+        
+        //https://api.trumail.io/v1/JSON/drom@ferg
+        if(!email.equals("")&&email!=null)
+        {
+            
+            System.out.println("email: "+email);
+        con.setUrl("http://api.trumail.io/v1/JSON/"+email);
+          con.addResponseListener((NetworkEvent evt) -> {
+                String data = new String(con.getResponseData());
+         JSONParser jsonp = new JSONParser();
+             try {
+                 Map<String, Object> Results = jsonp.parseJSON(new CharArrayReader(data.toCharArray()));
+                 if(Results.get("hostExists").equals("true"))
+                 ForgotView.reply(true);
+                 else
+                  ForgotView.reply(false);   
+                 } catch (IOException ex) {
+              
+             }
+         });
+        NetworkManager.getInstance().addToQueueAndWait(con);  
+        }
+        else
+        ForgotView.reply(false);
+    }
+    public void sendEmailRecovery(String email)
+    {     
+         con.setUrl(url+"User/recover?email="+email);
+         con.addResponseListener((NetworkEvent evt) -> {
+         });
+         NetworkManager.getInstance().addToQueueAndWait(con);   
     }
     public void fetchOneByCredentials(String login,String password)
     {

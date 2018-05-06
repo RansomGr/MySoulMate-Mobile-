@@ -37,8 +37,8 @@ public class EventsListerView extends com.codename1.ui.Form implements TerminalV
         setLayout(new com.codename1.ui.layouts.LayeredLayout());
         setInlineStylesTheme(resourceObjectInstance);
                 setInlineStylesTheme(resourceObjectInstance);
-        setTitle("EventsAjouterGui");
-        setName("EventsAjouterGui");
+        setTitle("EventsListerView");
+        setName("EventsListerView");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!

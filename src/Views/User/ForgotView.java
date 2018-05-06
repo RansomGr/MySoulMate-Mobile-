@@ -5,9 +5,12 @@
  */
 package Views.User;
 
+
+import Service.User.ServiceUser;
 import com.codename1.ui.Display;
-import com.codename1.ui.TextField;
 import com.mycompany.myapp.MyApplication;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * GUI builder created Form
@@ -16,18 +19,59 @@ import com.mycompany.myapp.MyApplication;
  */
 public class ForgotView extends com.codename1.ui.Form {
 
-  
-    
+    private ServiceUser Su;
+    private static boolean result;
+    private int timercount;
+    private boolean check;
+    private Timer t;
     public ForgotView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
          init_form();
     }
+     public static void reply(boolean result)
+     {
+         ForgotView.result=result;
+     }
+     public void startCustomRequestListener()
+     {
+          timercount=0;
+             check=false;
+             t= new Timer();
+                 t.schedule(new TimerTask() {
+                     @Override
+                     public void run() {
+                     System.out.println("timercount:"+timercount);
+                     timercount++;
+                     if(timercount==2&&check)
+                         {
+                               Su.checkEmail(gui_Email.getText());
+                              gui_SendEmail.setEnabled(ForgotView.result);
+                             timercount=0;
+                             check=false;
+                         }else if(timercount==2)
+                         {
+                             timercount=0;
+                         }
+                     }  
+                 },1000,1000);
+     }
       public void init_form()
-     {     
+     { 
+             ForgotView.result=false;
+             gui_SendEmail.setEnabled(false);
+             Su = new ServiceUser(); 
+             startCustomRequestListener();
+             gui_Email.addDataChangeListener((type, index) -> {
+             if(timercount>0){timercount--;check=true;}
+         });
          gui_BackToLogin.addActionListener((evt) -> {
              MyApplication.setCurrentView(new LoginView(MyApplication.getTheme()));
+             t.cancel();
          });
-        
+     gui_SendEmail.addActionListener((evt) -> {
+     Su.sendEmailRecovery(gui_Email.getText());
+     });
+     
      }
 
     @Override
@@ -84,6 +128,7 @@ public class ForgotView extends com.codename1.ui.Form {
         gui_SendEmail.setText("Envoyer email recuperation");
                 gui_SendEmail.setInlineStylesTheme(resourceObjectInstance);
         gui_SendEmail.setInlineAllStyles("font:2.5mm;");
+        gui_SendEmail.setInlineDisabledStyles("opacity:80;");
         gui_SendEmail.setName("SendEmail");
         com.codename1.ui.FontImage.setMaterialIcon(gui_SendEmail,"\ue163".charAt(0));
         ((com.codename1.ui.layouts.LayeredLayout)gui_SendEmail.getParent().getLayout()).setInsets(gui_SendEmail, "1.8518524mm 10.0% auto 10.0%").setReferenceComponents(gui_SendEmail, "2 0 -1 0 ").setReferencePositions(gui_SendEmail, "1.0 0.0 0.0 0.0");
