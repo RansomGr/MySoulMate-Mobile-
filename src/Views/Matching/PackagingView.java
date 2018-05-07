@@ -5,6 +5,13 @@
  */
 package Views.Matching;
 
+import com.codename1.gif.GifImage;
+import com.codename1.ui.Display;
+import com.codename1.ui.Label;
+import java.io.IOException;
+import java.io.InputStream;
+
+
 /**
  * GUI builder created Container
  *
@@ -20,6 +27,15 @@ public class PackagingView extends com.codename1.ui.Container {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
+    
+    public void gif() throws IOException
+    {
+    InputStream i = Display.getInstance().getResourceAsStream(getClass(),"../../../res/Nadia/giphy.gif");
+        //   GifImage image = new GifImage;
+        GifImage  image = GifImage.decode((i),1177720);
+        image.scale(1500,1000);
+        Label gif =new Label(image);
+    }
 //-- DON'T EDIT BELOW THIS LINE!!!
     private com.codename1.ui.Container gui_Grid_Layout = new com.codename1.ui.Container(new com.codename1.ui.layouts.GridLayout(5, 1));
     private com.codename1.ui.Label gui_nom_label = new com.codename1.ui.Label();

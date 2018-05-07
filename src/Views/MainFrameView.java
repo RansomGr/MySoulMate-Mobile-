@@ -93,6 +93,7 @@ public class MainFrameView extends com.codename1.ui.Form {
         topBar.add(BorderLayout.EAST, Settings);
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
+
         tb.addMaterialCommandToSideMenu("Ajouter Actualite", FontImage.MATERIAL_HOME, e -> {MyApplication.setCurrentView(this.renderTerminalView(AddActualiteForm.class));}); 
         tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {MyApplication.setCurrentView(this.renderTerminalView(ListPlanView.class));}); 
         tb.addMaterialCommandToSideMenu("Evenemments", FontImage.MATERIAL_WEB, e -> {/*EventsLister c = new EventsLister(MyApplication.getTheme()); c.getListForm().show(); */});
@@ -100,6 +101,7 @@ public class MainFrameView extends com.codename1.ui.Form {
         tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {MyApplication.setCurrentView(new VoirMatchingView(MyApplication.getTheme()));});  
         tb.addMaterialCommandToSideMenu("Horoscope", FontImage.MATERIAL_INFO, e -> {MyApplication.setCurrentView(this.renderTerminalView(HoroscopeForm.class));});  
         load_acts();   
+
     }
      private Form renderTerminalView(Class s ) //an instance of TerminalView 
      {

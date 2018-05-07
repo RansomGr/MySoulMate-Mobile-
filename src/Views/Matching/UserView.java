@@ -11,6 +11,7 @@ import com.codename1.io.ConnectionRequest;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * GUI builder created Container
@@ -35,7 +36,7 @@ public class UserView extends com.codename1.ui.Container {
         req.setUrl("http://localhost/MySoulMate-Symphony/web/app_dev.php/ ");
         req.addResponseListener((NetworkEvent evt) -> {
             
-            ArrayList<User> matchings = controller.getList2();
+            List<User> matchings = controller.getList2();
             for (int i = 0; i < matchings.size(); i++) {
                       
                         matchings.get(i).getProfil().getPhoto() ;

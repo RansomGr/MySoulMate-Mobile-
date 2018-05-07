@@ -20,6 +20,14 @@ public class VoirAmisView extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
+ //   public void mail()
+ //   {
+ //   Message m = new Message("Bonjour Mme/Mr, \n  je viens de passer une commande ! voilà ce qu'elle contien ! Description : "
+  //          +desc.getText()+ " Budget : "+budget.getText()+" DT , Nombre de personnes : "+nbrePer.getText()+" PERSONNES");
+  //           // m.getAttachments().put(textAttachmentUri, "text/plain");
+             
+  //            Display.getInstance().sendMessage(new String[] {7ot mail eli thebou yousellou}, "Passer commande traiteur", m);
+  //  }
 //-- DON'T EDIT BELOW THIS LINE!!!
 
 
