@@ -6,6 +6,9 @@
 package Service.Matching;
 
 import Entities.Matching.Packaging;
+import Entities.User.User;
+import static Service.Service.con;
+import static Service.Service.url;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -61,5 +64,19 @@ public class ServicePackaging {
         return listTasks;
     }
 
+    
+    
+    
+        public void Acheter(Packaging p) {
+
+        con.setUrl(url+ "/Client/FO_acheterM{" + p.getID() + "}");
+
+        con.addResponseListener((NetworkEvent evt) -> {
+            String str = new String(con.getResponseData());
+            System.out.println(str);
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);
+
+    }
     
 }
