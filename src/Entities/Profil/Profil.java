@@ -5,20 +5,20 @@
  */
 package Entities.Profil;
 
-import Entities.Matching.Caracteristique;
+import Entities.Profil.Caracteristique;
 
 /**
  *
  * @author Nadia
  */
 public class Profil {
-      private int id;
-  
+    
+   private int id;
    private  Caracteristique Caracteristique;
    private String photo;
    private String description;	
    private Caracteristique preference;
-
+   
    
 
 

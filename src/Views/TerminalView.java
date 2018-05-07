@@ -7,7 +7,6 @@ package Views;
 
 import Singletons.BackCommand;
 import com.codename1.ui.Form;
-import com.mycompany.myapp.MyApplication;
 
 /**
  *
@@ -21,7 +20,6 @@ public interface TerminalView {
         { 
         System.out.println("it's a Form instance");
         Form f= ((Form)this);
-            System.out.println(BackCommand.getInstance());
         f.setBackCommand(BackCommand.getInstance());
         }
     }

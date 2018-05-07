@@ -105,7 +105,7 @@ public class UserAccountView extends com.codename1.ui.Form implements TerminalVi
             if(mode==2)
             {
               gui_woman.setVisible(true);
-            gui_man.setVisible(true);
+              gui_man.setVisible(true);
                 update_button_state(0);
             }else
             {
