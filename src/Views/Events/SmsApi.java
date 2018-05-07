@@ -7,9 +7,9 @@ package Views.Events;
 
 //import com.codename1.messaging.Message;
 import Views.TerminalView;
-import com.twilio.Twilio;
-import com.twilio.type.PhoneNumber;
-import com.twilio.rest.api.v2010.account.Message;
+//import com.twilio.Twilio;
+//import com.twilio.type.PhoneNumber;
+//import com.twilio.rest.api.v2010.account.Message;
 
 
 
@@ -27,10 +27,10 @@ public class SmsApi extends com.codename1.ui.Form implements TerminalView{
     }
 
     public void sendSms(String body) {
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
-        Message.creator(new PhoneNumber("+21621821220"),
-        new PhoneNumber("+18327531831"), 
-        body).create();
+//        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+//        Message.creator(new PhoneNumber("+21621821220"),
+//        new PhoneNumber("+18327531831"), 
+//        body).create();
     }
     
     
