@@ -11,6 +11,10 @@ import com.codename1.components.InfiniteProgress;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.TextField;
+import com.codename1.ui.validation.LengthConstraint;
+import com.codename1.ui.validation.NumericConstraint;
+import com.codename1.ui.validation.RegexConstraint;
+import com.codename1.ui.validation.Validator;
 import com.mycompany.myapp.MyApplication;
 
 /**
@@ -20,9 +24,20 @@ import com.mycompany.myapp.MyApplication;
  */
 public class LoginView extends com.codename1.ui.Form {
     private ServiceUser Su ;
+    private Validator v;
     public LoginView(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
         init_form();
+        init_validator();
+    }
+    public void init_validator()
+    {
+          v = new Validator();
+          v.addConstraint(this.gui_username, new LengthConstraint(1,"champ login vide "),
+                             new RegexConstraint("[0-9]+", "champ login ne doit pas contenir des char specieaux"));
+         v.addConstraint(this.gui_password, new LengthConstraint(1,"mot de passe vide"));
+         v.addSubmitButtons(gui_login);
+ 
     }
      public void init_form()
      {
@@ -114,6 +129,7 @@ public class LoginView extends com.codename1.ui.Form {
         gui_login.setText("Se Connecter");
                 gui_login.setInlineStylesTheme(resourceObjectInstance);
         gui_login.setInlineAllStyles("font:3.0mm;");
+        gui_login.setInlineDisabledStyles("opacity:80;");
         gui_login.setName("login");
         ((com.codename1.ui.layouts.LayeredLayout)gui_login.getParent().getLayout()).setInsets(gui_login, "2.910053mm 7.4074073% auto 5.026455mm").setReferenceComponents(gui_login, "2 4 -1 4 ").setReferencePositions(gui_login, "1.0 0.0 0.0 0.0");
         gui_Label.setPreferredSizeStr("105.02646mm 2.910053mm");

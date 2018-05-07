@@ -4,14 +4,18 @@ package com.mycompany.myapp;
 import Entities.User.User;
 import Views.User.LoginView;
 import com.codename1.components.ImageViewer;
+import com.codename1.db.Database;
 import static com.codename1.ui.CN.*;
 import com.codename1.io.Log;
 import com.codename1.ui.Dialog;
+import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.Toolbar;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
+import java.io.IOException;
+
 
 
 /**
@@ -21,6 +25,7 @@ import com.codename1.ui.util.UIBuilder;
 public class MyApplication {
     private static  Resources theme;    
     private static User ConnectedUser;
+    private static Database  db;
     public static Resources  getTheme(){return MyApplication.theme;}// Theme
     public static User getConnectedUser(){return MyApplication.ConnectedUser; }// Session owner
     public static void setConnectedUser(User U) {MyApplication.ConnectedUser=U;} // puttin the session owner 
@@ -31,8 +36,12 @@ public class MyApplication {
     private static Form previous;
     public void init(Object context)  {  
     theme = UIManager.initFirstTheme("/theme");
-    UIBuilder.registerCustomComponent("ImageViewer",ImageViewer.class);
     current=new LoginView(theme);
+        try {
+            db = Display.getInstance().openOrCreate("MySoulMate.db");
+        } catch (IOException ex) {
+            System.out.println("7abcha9leu");
+        }
         // Pro only feature
         Log.bindCrashProtection(true);
     }

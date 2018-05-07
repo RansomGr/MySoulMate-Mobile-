@@ -12,6 +12,7 @@ import InternalAPI.CustomEspritJSONParser;
 import Service.Service;
 import Views.User.ForgotView;
 import com.codename1.io.CharArrayReader;
+import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
@@ -65,7 +66,9 @@ public class ServiceUser implements Service<User> {
 
     @Override
     public void update(User o) {
-
+    ConnectionRequest con = new ConnectionRequest();
+    con.setUrl(url+"User/update?idu="+o.getId()+"&nom="+o.getNom()+"&prenom="+o.getPrenom()+"&datenai="+o.getDatenaissance().getTime()+"&gender="+o.getGender());
+    NetworkManager.getInstance().addToQueue(con);      
     }
 
     @Override
@@ -84,24 +87,29 @@ public class ServiceUser implements Service<User> {
     }
     public void checkEmail(String email)
     {   
+        ConnectionRequest con = new ConnectionRequest();
         con.setPost(false);
         
         //https://api.trumail.io/v1/JSON/drom@ferg
         if(!email.equals("")&&email!=null)
-        {  
-            System.out.println("email: "+email);
-        con.setUrl("http://api.trumail.io/v1/JSON/"+email);
+        {
+          System.out.println("email: "+email);
+          con.setUrl("https://api.trumail.io/v1/JSON/"+email);
           con.addResponseListener((NetworkEvent evt) -> {
                 String data = new String(con.getResponseData());
          JSONParser jsonp = new JSONParser();
              try {
+                 if(!data.isEmpty())
+                 {
                  Map<String, Object> Results = jsonp.parseJSON(new CharArrayReader(data.toCharArray()));
                  if(Results.get("hostExists").equals("true"))
                  ForgotView.reply(true);
                  else
                   ForgotView.reply(false);   
-                 } catch (IOException ex) {
+                 }
+             } catch (IOException ex) {
              }
+                 
          });
         NetworkManager.getInstance().addToQueueAndWait(con);  
         }
@@ -109,11 +117,10 @@ public class ServiceUser implements Service<User> {
         ForgotView.reply(false);
     }
     public void sendEmailRecovery(String email)
-    {     
+    {   
+         ConnectionRequest con = new ConnectionRequest();
          con.setUrl(url+"User/recover?email="+email);
-         con.addResponseListener((NetworkEvent evt) -> {
-         });
-         NetworkManager.getInstance().addToQueueAndWait(con);   
+         NetworkManager.getInstance().addToQueue(con);   
     }
     public void fetchOneByCredentials(String login,String password){
         User Utilisateur= new User();

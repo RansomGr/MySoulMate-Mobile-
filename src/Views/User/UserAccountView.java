@@ -5,6 +5,8 @@
  */
 package Views.User;
 
+import Entities.User.User;
+import Service.User.ServiceUser;
 import Singletons.BackCommand;
 import Views.TerminalView;
 import com.codename1.ui.CheckBox;
@@ -23,6 +25,9 @@ import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.DataChangedListener;
 import com.codename1.ui.events.FocusListener;
 import com.codename1.ui.spinner.Picker;
+import com.codename1.ui.validation.LengthConstraint;
+import com.codename1.ui.validation.RegexConstraint;
+import com.codename1.ui.validation.Validator;
 import com.mycompany.myapp.MyApplication;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +42,7 @@ public class UserAccountView extends com.codename1.ui.Form implements TerminalVi
     private List<Component>guis;
     private int mode; // {0 : enable , 1 : revert, 2 : update }
     private int Gender;
+    private Validator v;
     public UserAccountView() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         init_form();
@@ -46,6 +52,15 @@ public class UserAccountView extends com.codename1.ui.Form implements TerminalVi
         initGuiBuilderComponents(resourceObjectInstance);  
         init_form();
         init_actions();   
+    }
+    private void init_validator()
+    {
+           v = new Validator();
+          v.addConstraint(this.gui_nom, new LengthConstraint(1,"champ nom vide "),
+                             new RegexConstraint("[A-z]+", "pas de numeros ni char specieaux"));
+         v.addConstraint(this.gui_prenom,new LengthConstraint(1,"champ prenom vide "),
+                             new RegexConstraint("[A-z]+", "pas de numeros ni char specieaux"));
+         v.addSubmitButtons(gui_update);
     }
     private void fire_btn(){
               switch (mode) {
@@ -59,7 +74,18 @@ public class UserAccountView extends com.codename1.ui.Form implements TerminalVi
                 case 2: // updating the  user
                      if(Dialog.show("Mise A jour","Voulez vous vraiment mettre a jour vos données ?", "Oui","Non" ))
                      {
-                         // update here
+                         ServiceUser Su= new ServiceUser();
+                         User u =MyApplication.getConnectedUser();
+                         u.setDatenaissance(gui_datenaissancee.getDate());
+                         u.setNom(gui_nom.getText());
+                         u.setPrenom(gui_prenom.getText());
+                         String  gender="H";
+                         if(gui_woman.isSelected())
+                             gender="F";
+                             u.setGender(gender);
+                             Su.update(u);
+                             this.showBack();
+                             this.revert();
                      }
                      else
                      {
@@ -169,6 +195,7 @@ public class UserAccountView extends com.codename1.ui.Form implements TerminalVi
         guis.add(gui_woman);   
         gui_datenaissancee.setType(Display.PICKER_TYPE_DATE);
         revert();
+        init_validator();
         
     }
 

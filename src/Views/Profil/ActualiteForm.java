@@ -38,7 +38,6 @@ public class ActualiteForm extends SideMenuBaseForm {
         req.addResponseListener((NetworkEvent evt) -> {
             ArrayList<Actualite> actualites = controller.ParseActualite(new String(req.getResponseData()));
             for (int i = 0; i < actualites.size(); i++) {
-
                 addButton(
                         res,
                         actualites.get(i).getPhoto(),
@@ -48,9 +47,7 @@ public class ActualiteForm extends SideMenuBaseForm {
                         actualites.get(i)
                 );
             }
-
         });
-
         NetworkManager.getInstance().addToQueue(req);
         refreshTheme();
 
@@ -61,6 +58,8 @@ public class ActualiteForm extends SideMenuBaseForm {
         ImageViewer image = new ImageViewer();
         image.setImage(URLImage.createToStorage(EncodedImage.createFromImage(Image.createImage(150, 150, 0xffff0000), false), img,
                 Constants.IMAGE_ACTUALITE_URL + img));
+    //    Image  i= URLImage.createToStorage(EncodedImage.createFromImage(Image.createImage(150, 150, 0xffff0000), false), img,
+       //         "localhost/MySoulMate-Symphony/web/images/"+ img);
 
         Button button = new Button();
         button.setUIID("Label");

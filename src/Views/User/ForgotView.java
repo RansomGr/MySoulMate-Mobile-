@@ -7,7 +7,10 @@ package Views.User;
 
 
 import Service.User.ServiceUser;
+import com.codename1.ui.Component;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
+import com.codename1.ui.events.FocusListener;
 import com.mycompany.myapp.MyApplication;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,22 +35,37 @@ public class ForgotView extends com.codename1.ui.Form {
      {
          ForgotView.result=result;
      }
+     public void init_focus_actions()
+     {
+         gui_Email.addFocusListener(new FocusListener(){
+             @Override
+             public void focusGained(Component cmp) {
+              startCustomRequestListener();
+             }
+
+             @Override
+             public void focusLost(Component cmp) {
+              t.cancel();
+              Su.checkEmail(gui_Email.getText());
+             }
+         });
+     }
      public void startCustomRequestListener()
      {
           timercount=0;
              check=false;
              t= new Timer();
-                 t.schedule(new TimerTask() {
+             t.schedule(new TimerTask() {
                      @Override
                      public void run() {
                      System.out.println("timercount:"+timercount);
                      timercount++;
                      if(timercount==2&&check)
                          {
-                               Su.checkEmail(gui_Email.getText());
+                              Su.checkEmail(gui_Email.getText());
                               gui_SendEmail.setEnabled(ForgotView.result);
-                             timercount=0;
-                             check=false;
+                              timercount=0;
+                              check=false;
                          }else if(timercount==2)
                          {
                              timercount=0;
@@ -57,10 +75,10 @@ public class ForgotView extends com.codename1.ui.Form {
      }
       public void init_form()
      { 
-             ForgotView.result=false;
+        init_focus_actions();
+         ForgotView.result=false;
              gui_SendEmail.setEnabled(false);
              Su = new ServiceUser(); 
-             startCustomRequestListener();
              gui_Email.addDataChangeListener((type, index) -> {
              if(timercount>0){timercount--;check=true;}
          });
@@ -69,7 +87,21 @@ public class ForgotView extends com.codename1.ui.Form {
              t.cancel();
          });
      gui_SendEmail.addActionListener((evt) -> {
-     Su.sendEmailRecovery(gui_Email.getText());
+   
+     if(!Dialog.show("Recuperation Compte", "Un email de recuperation a etais envoyer \n verifier votre inbox","Ok","retour"))
+             {
+               MyApplication.setCurrentView(new LoginView(MyApplication.getTheme()));
+                 t= new Timer();
+                 t.schedule(new TimerTask() {
+                   @Override
+                   public void run() {
+                      Su = new ServiceUser();
+                      Su.sendEmailRecovery(gui_Email.getText());
+                   }
+             },1000);
+             }
+
+     
      });
      
      }

@@ -10,7 +10,7 @@
   <component type="TextField" styles="alignment:center;" preferredSize="100.0mm 7.5%" hint="mot de passe" hintIcon="fontImage:e897" name="password">
     <layoutConstraint insets="1.0% 0.0mm auto 0.0mm" referenceComponents="1 1 -1 1 " referencePositions="1.0 0.0 0.0 0.0" />
   </component>
-  <component type="Button" text="Se Connecter" styles="font:3.0mm;" preferredSize="58.99471mm 5.820106mm" name="login">
+  <component type="Button" text="Se Connecter" styles="font:3.0mm;" disabledStyles="opacity:80;" preferredSize="58.99471mm 5.820106mm" name="login">
     <layoutConstraint insets="2.910053mm 7.4074073% auto 5.026455mm" referenceComponents="2 4 -1 4 " referencePositions="1.0 0.0 0.0 0.0" />
   </component>
   <component type="Label" preferredSize="105.02646mm 2.910053mm" name="Label">

@@ -6,8 +6,6 @@
 package Service;
 import com.codename1.io.ConnectionRequest;
 import java.util.List;
-
-
 /**
  *
  * @author Ransom
