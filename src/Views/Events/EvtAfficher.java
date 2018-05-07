@@ -32,38 +32,33 @@ public class EvtAfficher extends com.codename1.ui.Form implements TerminalView{
           listForm = new Form(BoxLayout.y());
           addEvt(evt1);
   }
+      public EvtAfficher(Events evt1) {
+        
+          listForm = new Form(BoxLayout.y());
+          addEvt(evt1);
+  }
 
       public void addEvt(Events e ){
-       
-        Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
-      
-     
-        Container C2 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
-        Label nom =new Label("nom : "+e.getNomEvt());
-        Label descript = new Label("email : "+e.getDescriptionEvt());
-        Label dateevt = new Label("categorie(s) : "+e.getDateEvt());
-        Label description ;
           
+        Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));    
+        Container C2 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Label nom =new Label("participants : "+e.getNomEvt());
+        Label descript = new Label("decription : "+e.getDescriptionEvt());
+        //Label dateevt = new Label(" "+e.getDateEvt());
+        Label description ;          
         if(e.getDescriptionEvt().equals("")){
                  description = new Label("description : pas de description");
         }
         else{
                  description = new Label("description : "+e.getDescriptionEvt());
-        }
-         
-//        
+        } 
               C2.add(nom.getText());
               C2.add(descript.getText());
-              C2.add(dateevt.getText());;
-              C2.add(description.getText());
-       
-       
+              //C2.add(dateevt.getText());;
+              C2.add(description.getText());      
        C1.add(C2);
-        
-        listForm.add(C1);
-          
-          
-      }
+       listForm.add(C1);
+       }
     
     public Form getListerForm() {
         return listForm;

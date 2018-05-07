@@ -7,6 +7,7 @@ package Views;
 
 import Views.Matching.VoirMatchingView;
 import Views.Events.EventsLister;
+import Views.Events.EventsListerView;
 import Views.Events.EvtAfficher;
 import Views.Events.Test;
 import Views.Plan.ListPlanView;
@@ -57,7 +58,7 @@ public class MainFrameView extends com.codename1.ui.Form {
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
     tb.addMaterialCommandToSideMenu("Plan", FontImage.MATERIAL_HOME, e -> {MyApplication.setCurrentView(this.renderTerminalView(ListPlanView.class));}); 
-    tb.addMaterialCommandToSideMenu("Evenemments", FontImage.MATERIAL_WEB, e -> {/*EventsLister c = new EventsLister(MyApplication.getTheme()); c.getListForm().show(); */});
+    tb.addMaterialCommandToSideMenu("Evènements", FontImage.MATERIAL_WEB, e -> {MyApplication.setCurrentView(this.renderTerminalView(EventsListerView.class));/*EventsLister c = new EventsLister(MyApplication.getTheme()); c.show();*/});
     tb.addMaterialCommandToSideMenu("Relation", FontImage.MATERIAL_SETTINGS, e -> {/* Votre fonction ici */});
     tb.addMaterialCommandToSideMenu("Matching", FontImage.MATERIAL_INFO, e -> {MyApplication.setCurrentView(new VoirMatchingView(MyApplication.getTheme()));});  
     }

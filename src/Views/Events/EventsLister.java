@@ -27,18 +27,13 @@ import java.util.List;
  * @author dellpro
  */
 public class EventsLister extends com.codename1.ui.Form implements TerminalView {
- 
-   
     public EventsLister() {
-        init_form();
-       
-          this.setLayout(BoxLayout.y());
-          
-             listEvent=new ServiceEvents().getListEvt();
-     
+        
+        init_form();       
+          this.setLayout(BoxLayout.y());          
+             listEvent=new ServiceEvents().getListEvt();     
              System.out.println("hire");
-             System.out.println(listEvent);
-             
+             System.out.println(listEvent);             
         for (Events evt : listEvent){
              System.out.println("hire2");
             addEvt(evt,MyApplication.getTheme());
@@ -49,49 +44,37 @@ public class EventsLister extends com.codename1.ui.Form implements TerminalView 
     {
         TerminalView.super.init_form();
     }
-    
     private List<Events>listEvent;
     public EventsLister(Resources res) {
         init_form();
-        
-          this.setLayout(BoxLayout.y());
-          
+        this.setLayout(BoxLayout.y());
              listEvent=new ServiceEvents().getListEvt();
-     
              System.out.println("hire");
-             System.out.println(listEvent);
-             
+             System.out.println(listEvent);             
         for (Events evt : listEvent){
              System.out.println("hire2");
             addEvt(evt,res);
            
         }
-        
-        // this.sideMenu(listForm, res);
     }
     
 public void addEvt(Events e,Resources res ){
        
         Container C1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
-      
-     
         Container C2 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
-        Label nom =new Label("nom : "+e.getNomEvt());
-        Label descript = new Label("descri : "+e.getDescriptionEvt());
-        Label dateevt = new Label("dattteee : "+e.getDateEvt());
+        Label nom =new Label("Type: "+e.getTypeEvt());
+        Label descript = new Label("description: "+e.getDescriptionEvt());
+        Label dateevt = new Label("date: "+e.getDateEvt());
         Label go = new Label("--->");
         Label go1 = new Label("*********************************************");
         Label description ;
-          
         if(e.getDescriptionEvt().equals("")){
                  description = new Label("description : pas de description");
         }
         else{
                  description = new Label("description : "+e.getDescriptionEvt());
         }
-         
-        
-        go.addPointerPressedListener(new ActionListener() {
+       go.addPointerPressedListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
         
@@ -105,8 +88,6 @@ public void addEvt(Events e,Resources res ){
               C2.add(description.getText());
               C2.add(go);
               C2.add(go1);
-       
-        
         System.out.println("hire3");
         this.add(C2);      
       }
